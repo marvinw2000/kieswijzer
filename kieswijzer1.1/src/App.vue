@@ -1,15 +1,18 @@
 <template>
   <div id="app">
     <Header/>
-
+    <div id="placeholder"></div>
+    <Footer/>
   </div>
 </template>
 <script>
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Footer
   }
 }
 </script>
@@ -18,4 +21,8 @@ export default {
   padding: 0px;
   margin: 0px;
 }
+#placeholder {
+  height:425px;
+}
+
 </style>

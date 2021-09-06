@@ -67,13 +67,5 @@ export default
   border-right: solid #333 1px;
   color: black;
 }
-#zoekBar
-{
-  float: right;
-  margin: 15px;
-}
-#test
-{
-  margin: 15px;
-}
+
 </style>
