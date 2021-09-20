@@ -11,12 +11,12 @@
     </div>
     <div id="lower">
       <div id="nav">
-        <a class="button" href="">Ict</a>
-        <a class="button" href="">A&M</a>
-        <a class="button" href="">T&E</a>
-        <a class="button" href="">MEI</a>
-        <a class="button" href="">B&I</a>
-        <a class="button" href="">kieswijzer</a>
+        <a class="navButton" href="">Ict</a>
+        <a class="navButton" href="">Autotechniek en Mobiliteit</a>
+        <a class="navButton" href="">Technologie en Engineering</a>
+        <a class="navButton" href="">Metaal Elektro en Installatietechniek</a>
+        <a class="navButton" href="">Bouw en Infra</a>
+        <a class="navButton" href="">kieswijzer</a>
       </div>
     </div>
   </header>
@@ -39,33 +39,41 @@ export default
 </script>
 <style scoped>
 #titel{}
-#titel h1{margin: 20px;}
+#titel h1{
+  margin: 20px;
+  color: #1A61A1;
+
+}
 #logo{}
 #logo img{ height: 50px; width: 50px; margin: 20px;}
 #upper
 {
   width: 100%;
   height: 90px;
-  border-bottom: solid #333 1px;
+  border-bottom: solid #999 1px;
   display: flex;
 }
 #lower
 {
   width: 100%;
   height: 47px;
-  border-bottom: solid #333 1px;
+  border-bottom: solid #999 1px;
   display: flex;
 }
 #nav
 {
   margin: 15px;
 }
-.button
+.navButton
 {
   padding: 15px;
   text-decoration: none;
-  border-right: solid #333 1px;
-  color: black;
+  color: #1A61A1;
+}
+.navButton:hover
+{
+  color: #fff;
+  background-color: #1A61A1;
 }
 
 </style>

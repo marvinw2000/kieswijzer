@@ -18,8 +18,10 @@ export default {
 </script>
 <style>
 *{
+  font-family: ff-scala-sans-pro,sans-serif;
   padding: 0px;
-  margin: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 #placeholder {
   height:425px;
