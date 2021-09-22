@@ -9,6 +9,11 @@
         <li>author: Marvin A wallaard, Mucahid Sarikaya, Srishti Brijobhokun</li>
       </ul>
     </div>
+    <div id="socials">
+      <a href=""><i class="fab fa-instagram socials"></i></a>
+      <a href=""><i class="fab fa-facebook socials"></i></a>
+      <a href=""><i class="fab fa-youtube socials"></i></a>
+    </div>
   </footer>
 
 </template>
@@ -20,11 +25,9 @@ export default
   data()
   {
     return{
-
     }
   },
   methods: {
-
   }
 }
 </script>
@@ -32,23 +35,40 @@ export default
 <style scoped>
 footer
 {
-  border-top: solid #333 1px;
+  border-top: solid #999 1px;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 footer ul
 {
-  color: #333;
+  color: #1A61A1;
   list-style: none;
 }
 footer h4
 {
-  color: #333;
-  margin-left: 30px;
+  color: #1A61A1;
 }
 #contact
 {
-  margin:20px;
+  text-align: center;
 }
-
+#socials{
+  text-align: center;
+}
+.socials{
+  color: #1A61A1;
+  font-size: 50px;
+}
+@media (min-width: 700px){
+  footer{
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+  }
+  #contact{
+    margin-left: 20%;
+  }
+}
 </style>

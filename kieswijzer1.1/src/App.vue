@@ -1,17 +1,19 @@
 <template>
   <div id="app">
     <Header/>
-    <div id="placeholder"></div>
+    <Home/>
     <Footer/>
   </div>
 </template>
 <script>
 import Header from "../src/components/Header";
+import Home from "../src/components/Home";
 import Footer from "../src/components/Footer";
 export default {
   name: 'App',
   components: {
     Header,
+    Home,
     Footer
   }
 }
@@ -26,5 +28,4 @@ export default {
 #placeholder {
   height:425px;
 }
-
 </style>
