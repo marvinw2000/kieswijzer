@@ -16,18 +16,18 @@
         <a class="navButton" href="">Technologie en Engineering</a>
         <a class="navButton" href="">Metaal Elektro en Installatietechniek</a>
         <a class="navButton" href="">Bouw en Infra</a>
-        <a class="navButton" href="">kieswijzer</a>
+        <a class="navButton rood" href="">kieswijzer</a>
       </div>
       <label for="toggle"> &#9776; </label>
 
       <input type="checkbox" id="toggle" class="hidden">
       <div class="hamburgerNav">
-        <a href="">Ict</a>
-        <a href="">Autotechniek en Mobiliteit</a>
-        <a href="">Technologie en Engineering</a>
-        <a href="">Metaal Elektro en Installatietechniek</a>
-        <a href="">Bouw en Infra</a>
-        <a href="">kieswijzer</a>
+        <a class="hamburgerNavBtn">Ict</a>
+        <a class="hamburgerNavBtn">Autotechniek en Mobiliteit</a>
+        <a class="hamburgerNavBtn">Technologie en Engineering</a>
+        <a class="hamburgerNavBtn">Metaal Elektro en Installatietechniek</a>
+        <a class="hamburgerNavBtn">Bouw en Infra</a>
+        <a class="hamburgerNavBtn rood" href="">kieswijzer</a>
       </div>
     </div>
   </header>
@@ -89,7 +89,7 @@ label{
 
 }
 
-.hamburgerNav a{
+.hamburgerNavBtn{
   margin:0px;
   padding: 5px 0px  5px 10px;
   border-bottom: solid #999 1px;
@@ -98,13 +98,14 @@ label{
   text-decoration: none;
   display: block;
 }
-.hamburgerNav a:hover {
+.hamburgerNavBtn:hover {
   color: #fff;
   background-color: #1A61A1;
 }
 #toggle:checked ~ .hamburgerNav{
   display: block;
 }
+
 @keyframes fadeInAnimation {
   0% {
     opacity: 0;
@@ -113,6 +114,12 @@ label{
     opacity: 1;
   }
 }
+
+.rood:hover{
+  background-color: #e20d18;
+  color: white;
+}
+
 @media (min-width: 700px){
   #titel h1{
     font-size: 2em;
@@ -142,4 +149,11 @@ label{
     border-bottom: solid #999 1px;
   }
 }
+
+.rood:hover{
+  background-color: #e20d18;
+  color: white;
+}
+
+
 </style>

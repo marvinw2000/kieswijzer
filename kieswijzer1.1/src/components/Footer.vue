@@ -14,7 +14,14 @@
       <a href=""><i class="fab fa-facebook socials"></i></a>
       <a href=""><i class="fab fa-youtube socials"></i></a>
     </div>
-
+    <div id="aanmelden">
+      <h4>Aanmelden</h4>
+      <p>Keuze gemaakt? Meld je direct aan!</p>
+      <button type="button" formtarget="_parent" onclick="window.location.href='https://rocmondriaan.nl/alle-opleidingen'">Direct aanmelden!</button>
+      <p class="tekstSchuin">
+        ...en wordt de Mondriaan van morgen!
+      </p>
+    </div>
   </footer>
 
 </template>
@@ -51,6 +58,7 @@ footer h4
 {
   color: #1A61A1;
 }
+
 #contact
 {
   text-align: center;
@@ -62,6 +70,30 @@ footer h4
   color: #1A61A1;
   font-size: 50px;
 }
+
+#aanmelden
+{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #1A61A1;
+}
+
+button{
+  background-color: #e20d18;
+  font-size:15px;
+  color: white;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.tekstSchuin{
+  font-style: italic;
+  font-size: 15px;
+  margin-left: 30px;
+}
 @media (min-width: 700px){
   footer{
     flex-direction: row;
@@ -69,7 +101,7 @@ footer h4
     align-content: center;
   }
   #contact{
-    margin-left: 20%;
+    margin-left: 15%;
   }
 }
 </style>
