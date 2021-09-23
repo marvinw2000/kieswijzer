@@ -14,6 +14,7 @@
       <a href=""><i class="fab fa-facebook socials"></i></a>
       <a href=""><i class="fab fa-youtube socials"></i></a>
     </div>
+
   </footer>
 
 </template>
