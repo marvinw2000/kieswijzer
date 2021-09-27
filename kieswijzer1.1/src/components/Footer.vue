@@ -101,7 +101,7 @@ button{
     align-content: center;
   }
   #contact{
-    margin-left: 15%;
+    margin-left: 7.5%;
   }
 }
 </style>
