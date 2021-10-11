@@ -1,18 +1,18 @@
 <template>
-<div id="ContainerBuiten">
+<div id="containerBuiten">
   <div id="links"></div>
   <div id="midden">
-    <div id="ContainerBinnen">
+    <div id="containerBinnen">
       <div id="vraag">
         <h1>vraag {{id}}:</h1>
         <p>{{vraag}}</p>
       </div>
       <div id="buttons">
-        <div class="button"></div>
-        <div class="button"></div>
+        <div class="button rood">&#9587;</div>
+        <div class="button groen">&#10003;</div>
       </div>
       <div id="progresionBar">
-        <img src="" alt="">
+        <div></div>
       </div>
     </div>
   </div>
@@ -47,5 +47,68 @@ export default {
 </script>
 
 <style scoped>
+*{
+  font-family: ff-scala-sans-pro,sans-serif;
+  padding: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+#containerBuiten{
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+}
+#links{
+  width: 5%;
+
+}
+#midden{
+  width: 90%;
+
+}
+#containerBinnen{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#vraag{
+  width: 100%;
+
+}
+#vraag h1{
+  text-align: center;
+}
+#vraag p{
+  text-align: center;
+}
+#buttons{
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+.button{
+  font-size: 80px;
+  color: white;
+
+  padding: 40px 130px 40px 130px;
+  margin: 10px;
+}
+.rood{
+  background-color: #E20D18;
+}
+.groen{
+  background-color: green;
+}
+#progresionBar{
+  width: 100%;
+  height: 100px;
+
+}
+#rechts{
+  width: 5%;
+
+}
 
 </style>
