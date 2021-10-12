@@ -21,7 +21,7 @@
       <h2>Keuze al gemaakt?</h2>
     </div>
     <div class="footerColumn2">
-      <button class="buttonColumn" type="button">Meld je nu aan</button>
+      <button class="buttonColumn" type="button" formtarget="_blank" onclick="window.location.href='https://rocmondriaan.nl/alle-opleidingen'">Meld je nu aan</button>
     </div>
 
   </div>
@@ -56,8 +56,9 @@ export default {
   margin-top: 20px;
   margin-right: 35px;
   border: none;
-  border-radius: 20px;
+  border-radius: 5px;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .container-aanmelden{
@@ -77,11 +78,26 @@ export default {
   margin-top: 20px;
   margin-right: 35px;
   border: none;
-  border-radius: 20px;
+  border-radius: 5px;
+  border-bottom: 3px solid #B50811;
+  transition: all .2s ease;
+}
+
+.buttonColumn:hover{
+  background-color: red;
 }
 
 img{
   width: 100%;
+}
+
+.footerColumn1{
+  text-align: right;
+  margin-top:10px;
+}
+
+.footerColumn2{
+  text-align: left;
 }
 
 </style>
