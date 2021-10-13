@@ -3,24 +3,24 @@
     <h1>Best passende scholen</h1>
   </div>
   <div class="container">
-      <div class="column1">
+      <div class="column">
         <button class="resultatenButton">Autotechniek</button>
         <img src="../assets/ICT.jpg" alt="Autotechniek">
       </div>
-      <div class="column2">
+      <div class="column">
         <button class="resultatenButton">ICT</button>
         <img src="../assets/ICT.jpg" alt="Elektro">
       </div>
-      <div class="column3">
+      <div class="column">
         <button class="resultatenButton">Mobiel</button>
         <img src="../assets/ICT.jpg" alt="ICT" >
       </div>
   </div>
   <div class="container-aanmelden">
-    <div class="footerColumn1">
+    <div class="footerText">
       <h2>Keuze al gemaakt?</h2>
     </div>
-    <div class="footerColumn2">
+    <div class="footerButton">
       <button class="buttonColumn" type="button" formtarget="_blank" onclick="window.location.href='https://rocmondriaan.nl/alle-opleidingen'">Meld je nu aan</button>
     </div>
 
@@ -51,7 +51,7 @@ export default {
 .resultatenButton{
   background-color: #1a61a1;
   color:white;
-  font-size: 12px;
+  font-size: 15px;
   padding: 12px 18px 12px 18px;
   margin-top: 20px;
   margin-right: 35px;
@@ -59,6 +59,12 @@ export default {
   border-radius: 5px;
   margin-bottom: 20px;
   width: 100%;
+  border-bottom: 3px solid #1a49a1;
+  transition: all .2s ease;
+}
+
+.resultatenButton:hover{
+  background-color: #1a49a1;
 }
 
 .container-aanmelden{
@@ -91,13 +97,26 @@ img{
   width: 100%;
 }
 
-.footerColumn1{
+.footerText{
   text-align: right;
   margin-top:10px;
 }
 
-.footerColumn2{
+.footerButton{
   text-align: left;
 }
+
+@media screen and (max-width: 768px){
+  .container{
+    grid-template-columns: minmax(0,1fr);
+  }
+}
+
+@media screen and (max-width: 480px){
+  .container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 
 </style>
