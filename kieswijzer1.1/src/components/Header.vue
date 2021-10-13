@@ -6,7 +6,7 @@
         <img  v-bind:src="logoHeader" :alt="logoHeader"/>
       </div>
       <div class="buttonOpleidingen">
-        <button type="button">opleidingen</button>
+        <button class="headerButton" type="button">opleidingen</button>
       </div>
     </div>
   </header>
@@ -18,7 +18,7 @@ export default
   data()
   {
     return{
-      logoHeader: require('@/assets/logo.jpeg')
+      logoHeader: require('@/assets/RocMondriaan.jpg')
     }
   },
   methods: {
@@ -29,8 +29,8 @@ export default
 <style scoped>
 #logo{}
 #logo img{
-  height: 50px;
-  width: 50px;
+  height: 70%;
+  width: 23%;
   margin: 20px;
 }
 
@@ -44,8 +44,7 @@ export default
   margin-left: auto;
 }
 
-button{
-
+.headerButton{
   background-color: #E20D18;
   color:white;
   font-size: 15px;
@@ -53,9 +52,16 @@ button{
   margin-top: 20px;
   margin-right: 35px;
   border: none;
-  border-radius: 20px;
+  border-radius: 5px;
+  border-bottom: 3px solid #B50811;
+  transition: all .2s ease;
 
 }
+.headerButton:hover{
+  background-color: red;
+}
+
+
 
 
 </style>
