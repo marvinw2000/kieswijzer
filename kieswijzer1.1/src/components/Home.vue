@@ -16,12 +16,15 @@ export default {
 }
 </script>
 <style scoped>
+
 @media (min-width: 700px){
+}
+*{
+  margin: 0px;
 }
 body{
   background-color: #1A61A1;
-  height: auto !important;
-  min-height: 100%;
+  height: 500px;
   width: 100%;
 }
 .homeContainer{
@@ -39,12 +42,14 @@ body{
   font-size: 25px;
   margin-top: 50px;
   padding: 35px 40px 35px 40px;
-  border-radius: 35px;
+  border-radius: 7px;
   margin-bottom: 50px;
-  border: none;
+  border-bottom: 3px solid #B50811;
+  transition: all .2s ease;
 }
 .startButton:hover{
   padding: 40px 45px 40px 45px;
-  background-color: #E20D33;
+  background-color: red;
 }
+
 </style>

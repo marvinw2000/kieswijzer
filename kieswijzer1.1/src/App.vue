@@ -1,18 +1,18 @@
 <template>
   <div id="app">
     <Header/>
-    <VraagComponent/>
+    <Home/>
   </div>
 </template>
 <script>
 
 import Header from "../src/components/Header";
-import VraagComponent from "./components/VraagComponent";
+import Home from "./components/Home";
 
 export default {
   name: 'App',
   components: {
-    VraagComponent,
+    Home,
     Header
   }
 }
@@ -21,7 +21,7 @@ export default {
 *{
   font-family: ff-scala-sans-pro,sans-serif;
   padding: 0px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 </style>
