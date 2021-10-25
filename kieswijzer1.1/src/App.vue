@@ -1,23 +1,22 @@
 <template>
   <div id="app">
     <Header/>
-
     <Informatie/>
+
   </div>
 </template>
 <script>
 
 import Header from "../src/components/Header";
-//import Home from "../src/components/Home";
-//import Resultaten from "./components/Resultaten";
 import Informatie from "./components/Informatie";
+
 
 export default {
   name: 'App',
   components: {
     Informatie,
     Header,
-   // Resultaten
+
   }
 }
 </script>
