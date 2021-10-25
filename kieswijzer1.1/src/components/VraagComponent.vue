@@ -12,8 +12,12 @@
         <div class="button groen">&#10003;</div>
       </div>
       <div id="progresionBar">
-        <div></div>
+        <div id="bar">
+          <div id="point"></div>
+        </div>
       </div>
+      <button >verwijder</button>
+      <div><h1 v-show="ok">Hello!</h1></div>
     </div>
   </div>
   <div id="rechts"></div>
@@ -39,7 +43,6 @@ export default {
       puntenTeni: vragenData.vragen[0].puntenTeni,
       puntenMei: vragenData.vragen[0].puntenMei,
       puntenBeni: vragenData.vragen[0].puntenBeni
-
     }
   },
   methods: {}
@@ -57,15 +60,12 @@ export default {
   display: flex;
   width: 100%;
   height: 100%;
-
 }
 #links{
   width: 5%;
-
 }
 #midden{
   width: 90%;
-
 }
 #containerBinnen{
   display: flex;
@@ -74,7 +74,6 @@ export default {
 }
 #vraag{
   width: 100%;
-
 }
 #vraag h1{
   text-align: center;
@@ -84,14 +83,12 @@ export default {
 }
 #buttons{
   width: 100%;
-
   display: flex;
   justify-content: center;
 }
 .button{
   font-size: 80px;
   color: white;
-
   padding: 40px 130px 40px 130px;
   margin: 10px;
 }
@@ -104,7 +101,17 @@ export default {
 #progresionBar{
   width: 100%;
   height: 100px;
-
+}
+#bar{
+  border: 2px solid black;
+  width: 500px;
+  height: 0px;
+}
+#point{
+  width: 10px;
+  height: 10px;
+  border: 1px green solid;
+  border-radius: 10px;
 }
 #rechts{
   width: 5%;
