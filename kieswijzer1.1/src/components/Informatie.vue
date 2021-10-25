@@ -38,60 +38,6 @@
 
     </div>
   </div>
-
-<!--  <div class="container">-->
-<!--    <div class="section">-->
-<!--      <h2>Meer informatie over de scholen</h2>-->
-<!--      <div class="item" v-if="[isActive === true]" v-on:click="toggle">-->
-<!--        <span>{{ toggleIcon }} Metaal-, elektro en installatietechniek</span>-->
-<!--      </div>-->
-<!--      <div class="item" v-if="[isActive ? 'block' : 'none', 'content']" v-show="isActive">-->
-<!--        <div class="body">-->
-<!--          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper aliquet pharetra.-->
-<!--          Phasellus imperdiet malesuada mattis. Etiam dictum nisi id ullamcorper elementum. Nullam-->
-<!--          pharetra tortor a nulla feugiat scelerisque. Fusce interdum eu orci vitae sodales. Sed gravida-->
-<!--          felis congue, efficitur erat et, interdum tortor. In dignissim mauris sit amet libero fermentum-->
-<!--          tempor. Morbi condimentum lacinia auctor. Integer eleifend placerat odio non eleifend. Fusce sed-->
-<!--          libero varius, pulvinar tortor id, elementum erat. In ac consectetur eros. Ut condimentum sem-->
-<!--          sodales eleifend laoreet. Quisque nec augue sollicitudin, semper nisl vitae, viverra risus.-->
-<!--          Etiam eget dapibus purus, ac hendrerit tellus. Proin faucibus massa quis ex ullamcorper semper.-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="item" v-if="[isOpen ? 'active' : '']" v-on:click="toggle2">-->
-<!--        <span>{{ toggleIcon }} Autotechniek en mobiliteit</span>-->
-<!--      </div>-->
-<!--      <div class="item" v-if="[isOpen ? 'block' : 'none', 'content']" v-show="isOpen">-->
-<!--        <div class="body">-->
-<!--          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper aliquet pharetra.-->
-<!--          Phasellus imperdiet malesuada mattis. Etiam dictum nisi id ullamcorper elementum. Nullam-->
-<!--          pharetra tortor a nulla feugiat scelerisque. Fusce interdum eu orci vitae sodales. Sed gravida-->
-<!--          felis congue, efficitur erat et, interdum tortor. In dignissim mauris sit amet libero fermentum-->
-<!--          tempor. Morbi condimentum lacinia auctor. Integer eleifend placerat odio non eleifend. Fusce sed-->
-<!--          libero varius, pulvinar tortor id, elementum erat. In ac consectetur eros. Ut condimentum sem-->
-<!--          sodales eleifend laoreet. Quisque nec augue sollicitudin, semper nisl vitae, viverra risus.-->
-<!--          Etiam eget dapibus purus, ac hendrerit tellus. Proin faucibus massa quis ex ullamcorper semper.-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="item" v-if="[isOpen ? 'active' : '']" v-on:click="toggle2">-->
-<!--        <span>{{ toggleIcon }} Autotechniek en mobiliteit</span>-->
-<!--      </div>-->
-<!--      <div class="item" v-if="[isOpen ? 'block' : 'none', 'content']" v-show="isOpen">-->
-<!--        <div class="body">-->
-<!--          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper aliquet pharetra.-->
-<!--          Phasellus imperdiet malesuada mattis. Etiam dictum nisi id ullamcorper elementum. Nullam-->
-<!--          pharetra tortor a nulla feugiat scelerisque. Fusce interdum eu orci vitae sodales. Sed gravida-->
-<!--          felis congue, efficitur erat et, interdum tortor. In dignissim mauris sit amet libero fermentum-->
-<!--          tempor. Morbi condimentum lacinia auctor. Integer eleifend placerat odio non eleifend. Fusce sed-->
-<!--          libero varius, pulvinar tortor id, elementum erat. In ac consectetur eros. Ut condimentum sem-->
-<!--          sodales eleifend laoreet. Quisque nec augue sollicitudin, semper nisl vitae, viverra risus.-->
-<!--          Etiam eget dapibus purus, ac hendrerit tellus. Proin faucibus massa quis ex ullamcorper semper.-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-
-
-<!--  </div>-->
-
 </template>
 
 <script>
@@ -125,16 +71,6 @@ export default {
   grid-template-columns: 45% 50%;
   margin-top:50px;
 }
-
-/*.item {*/
-/*  color: black;*/
-/*  cursor: pointer;*/
-/*  padding: 18px;*/
-/*  border: none;*/
-/*  text-align: left;*/
-/*  outline: none;*/
-/*  border: 1px solid #00639d;*/
-/*}*/
 
 .aanmeld-blok{
   margin-left: 60px;
