@@ -16,8 +16,6 @@
           <div id="point"></div>
         </div>
       </div>
-      <button >verwijder</button>
-      <div><h1 v-show="ok">Hello!</h1></div>
     </div>
   </div>
   <div id="rechts"></div>
@@ -103,15 +101,17 @@ export default {
   height: 100px;
 }
 #bar{
-  border: 2px solid black;
+  margin: 50px 25% 25px 25%;
+  border: 2px solid darkgray;
   width: 500px;
   height: 0px;
 }
 #point{
   width: 10px;
   height: 10px;
-  border: 1px green solid;
+  border: 1px cornflowerblue solid;
   border-radius: 10px;
+  background-color: cornflowerblue;
 }
 #rechts{
   width: 5%;
