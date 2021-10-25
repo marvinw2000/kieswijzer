@@ -107,6 +107,7 @@ export default {
   height: 0px;
 }
 #point{
+  margin-top: -5px;
   width: 10px;
   height: 10px;
   border: 1px cornflowerblue solid;
