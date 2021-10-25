@@ -37,6 +37,8 @@
       <img src="../assets/meldJeAan.jpg" alt="aanmelden" onclick="window.location.href='https://rocmondriaan.nl/alle-opleidingen'" height="500">
 
     </div>
+
+
   </div>
 </template>
 
@@ -45,27 +47,13 @@ export default {
   name: "Informatie",
   data() {
     return {
-      isOpen: false,
-      isActive: false,
-      toggleIcon: '+',
     }
   },
 
-  methods: {
-    // toggle() {
-    //   this.isActive = !this.isActive
-    //     },
-    //
-    // toggle2(){
-    //   this.isOpen = !this.isOpen
-  }
 }
 </script>
 
 <style scoped>
-
-
-
 .container{
   display: grid;
   grid-template-columns: 45% 50%;
@@ -150,6 +138,5 @@ body {
   content: "-";
   color:lawngreen;
 }
-
 
 </style>
