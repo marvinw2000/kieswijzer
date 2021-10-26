@@ -2,19 +2,18 @@
   <div id="app">
     <Header/>
     <Home/>
-    <Footer/>
   </div>
 </template>
 <script>
+
 import Header from "../src/components/Header";
-import Home from "../src/components/Home";
-import Footer from "../src/components/Footer";
+import Home from "./components/Home";
+
 export default {
   name: 'App',
   components: {
-    Header,
     Home,
-    Footer
+    Header
   }
 }
 </script>
@@ -22,10 +21,7 @@ export default {
 *{
   font-family: ff-scala-sans-pro,sans-serif;
   padding: 0px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-#placeholder {
-  height:425px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 </style>
