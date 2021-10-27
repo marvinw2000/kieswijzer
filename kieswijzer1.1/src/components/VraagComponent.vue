@@ -8,8 +8,8 @@
         <p>{{vraag}}</p>
       </div>
       <div id="buttons">
-        <div class="button rood">&#9587;</div>
-        <div class="button groen">&#10003;</div>
+        <div v-on:click="falseGeklikt()" class="button rood">&#9587;</div>
+        <div v-on:click="trueGeklikt()" class="button groen">&#10003;</div>
       </div>
       <div id="progresionBar">
         <div id="bar">
@@ -32,7 +32,6 @@ export default {
   data() {
     return{
       vragenData,
-      iteratie:0,
       id: vragenData.vragen[0].id,
       vraag: vragenData.vragen[0].vraag,
       juistenAntwoord: vragenData.vragen[0].juistenAntwoord,
@@ -40,10 +39,60 @@ export default {
       puntenAenM: vragenData.vragen[0].puntenAenM,
       puntenTeni: vragenData.vragen[0].puntenTeni,
       puntenMei: vragenData.vragen[0].puntenMei,
-      puntenBeni: vragenData.vragen[0].puntenBeni
+      puntenBeni: vragenData.vragen[0].puntenBeni,
+      lengtenVragen: vragenData.vragen.length,
+      iteratie:0,
+      geklikteButton:true,
+      Ict:0,
+      AenM:0,
+      TenI:0,
+      Mei:0,
+      BenI:0
     }
   },
-  methods: {}
+  methods:{
+    next(){
+      this.iteratie++
+      if(this.iteratie <= this.lengtenVragen){
+        this.id = vragenData.vragen[this.iteratie].id
+        this.vraag = vragenData.vragen[this.iteratie].vraag
+      }
+    },
+    falseGeklikt(){
+      this.geklikteButton = false
+      //console.log(this.geklikteButton +" "+ this.iteratie)
+      if(this.geklikteButton === vragenData.vragen[this.iteratie].juistenAntwoord){
+        this.Ict += vragenData.vragen[this.iteratie].puntenIct
+        this.AenM += vragenData.vragen[this.iteratie].puntenAenM
+        this.BenI += vragenData.vragen[this.iteratie].puntenBeni
+        this.TenI += vragenData.vragen[this.iteratie].puntenTeni
+        this.Mei += vragenData.vragen[this.iteratie].puntenMei
+        //alert(this.Ict )
+        //console.log("gelijk")
+        this.next()
+      }
+      else{
+        this.next()
+      }
+    },
+    trueGeklikt(){
+      this.geklikteButton = true
+      //console.log(this.geklikteButton +" "+ this.iteratie)
+      if(this.geklikteButton === vragenData.vragen[this.iteratie].juistenAntwoord){
+        this.Ict += vragenData.vragen[this.iteratie].puntenIct
+        this.AenM += vragenData.vragen[this.iteratie].puntenAenM
+        this.BenI += vragenData.vragen[this.iteratie].puntenBeni
+        this.TenI += vragenData.vragen[this.iteratie].puntenTeni
+        this.Mei += vragenData.vragen[this.iteratie].puntenMei
+        //console.log("gelijk")
+        //alert(this.Ict)
+        this.next()
+      }
+      else{
+        this.next()
+      }
+    }
+  }
 }
 </script>
 
