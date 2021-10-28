@@ -6,7 +6,9 @@
         orem ipsum dolor sit amet, consectetur adipiscing elit.<br>
         Aenean vitae ullamcorper neque
       </p>
-     <button class="startButton" type="button">Start kieswijzer!</button>
+      <router-link to="/vragen" class="start" exact>
+         <button class="startButton" type="button">Start kieswijzer!</button>
+      </router-link>
     </div>
   </body>
 </template>

@@ -3,16 +3,23 @@
     <h1>Best passende scholen</h1>
   </div>
   <div class="container">
+
       <div class="column">
-        <button class="resultatenButton">Autotechniek</button>
+        <router-link to="/informatie" class="informatie" exact>
+          <button class="resultatenButton">Autotechniek</button>
+        </router-link>
         <img src="../assets/ICT.jpg" alt="Autotechniek">
       </div>
       <div class="column">
-        <button class="resultatenButton">ICT</button>
+        <router-link to="/informatie" class="informatie" exact>
+          <button class="resultatenButton">ICT</button>
+        </router-link>
         <img src="../assets/ICT.jpg" alt="Elektro">
       </div>
       <div class="column">
-        <button class="resultatenButton">Mobiel</button>
+        <router-link to="/informatie" class="informatie" exact>
+          <button class="resultatenButton">Mobiel</button>
+        </router-link>
         <img src="../assets/ICT.jpg" alt="ICT" >
       </div>
   </div>
