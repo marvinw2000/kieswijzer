@@ -1,24 +1,23 @@
 <template>
   <div class="headerTekst">
-    <h1>Best passende scholen</h1>
+    <h1>Best passende techniek scholen</h1>
   </div>
   <div class="container">
-
       <div class="column">
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">Autotechniek</button>
+          <button class="resultatenButton">1 - Autotechniek</button>
         </router-link>
         <img src="../assets/ICT.jpg" alt="Autotechniek">
       </div>
       <div class="column">
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">ICT</button>
+          <button class="resultatenButton">2 - ICT</button>
         </router-link>
         <img src="../assets/ICT.jpg" alt="Elektro">
       </div>
       <div class="column">
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">Mobiel</button>
+          <button class="resultatenButton">3 - Mobiel</button>
         </router-link>
         <img src="../assets/ICT.jpg" alt="ICT" >
       </div>
@@ -53,6 +52,11 @@ export default {
   display: grid;
   grid-template-columns: 33% 33% 33% ;
   text-align: center;
+}
+
+.column{
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .resultatenButton{
@@ -107,6 +111,7 @@ img{
 .footerText{
   text-align: right;
   margin-top:10px;
+  margin-right: 20px;
 }
 
 .footerButton{
