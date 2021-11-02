@@ -12,33 +12,30 @@
             <p><strong>History:</strong> While Trappist breweries have a tradition of brewing a lower-strength beer as a monk’s daily ration, the bitter, pale beer this style describes is a relatively modern invention reflecting current tastes. Westvleteren first brewed theirs in 1999, but replaced older lower-gravity products.</p>
           </div>
       </section>
-  <section class="accordion">
-    <input type="checkbox" name="collapse2" id="handle2">
-    <h2 class="handle">
-      <label for="handle2">Metaal-, elektro en installatietechniek</label>
-    </h2>
-    <div class="content">
-      <p><strong>Overall Impression:</strong> A deep reddish-copper, moderately strong, malty, complex Trappist ale with rich malty flavors, dark or dried fruit esters, and light alcohol blended together in a malty presentation that still finishes fairly dry.</p>
-      <p><strong>History:</strong> Originated at monasteries in the Middle Ages, and was revived in the mid-1800s after the Napoleonic era.</p>
-    </div>
-  </section>
-  <section class="accordion">
-    <input type="checkbox" name="collapse2" id="handle3">
-    <h2 class="handle">
-      <label for="handle3">ICT</label>
-    </h2>
-    <div class="content">
-      <p><strong>Overall Impression:</strong> A pale, somewhat spicy, dry, strong Trappist ale with a pleasant rounded malt flavor and firm bitterness. Quite aromatic, with spicy, fruity, and light alcohol notes combining with the supportive clean malt character to produce a surprisingly drinkable beverage considering the high alcohol level.</p>
-      <p><strong>History:</strong> Originally popularized by the Trappist monastery at Westmalle.</p>
-    </div>
-  </section>
+      <section class="accordion">
+        <input type="checkbox" name="collapse2" id="handle2">
+        <h2 class="handle">
+        <label for="handle2">Metaal-, elektro en installatietechniek</label>
+        </h2>
+          <div class="content">
+            <p><strong>Overall Impression:</strong> A deep reddish-copper, moderately strong, malty, complex Trappist ale with rich malty flavors, dark or dried fruit esters, and light alcohol blended together in a malty presentation that still finishes fairly dry.</p>
+            <p><strong>History:</strong> Originated at monasteries in the Middle Ages, and was revived in the mid-1800s after the Napoleonic era.</p>
+          </div>
+      </section>
+      <section class="accordion">
+        <input type="checkbox" name="collapse2" id="handle3">
+        <h2 class="handle">
+        <label for="handle3">ICT</label>
+        </h2>
+          <div class="content">
+            <p><strong>Overall Impression:</strong> A pale, somewhat spicy, dry, strong Trappist ale with a pleasant rounded malt flavor and firm bitterness. Quite aromatic, with spicy, fruity, and light alcohol notes combining with the supportive clean malt character to produce a surprisingly drinkable beverage considering the high alcohol level.</p>
+            <p><strong>History:</strong> Originally popularized by the Trappist monastery at Westmalle.</p>
+          </div>
+      </section>
     </div>
     <div class="aanmeld-blok">
       <img src="../assets/meldJeAan.jpg" alt="aanmelden" onclick="window.location.href='https://rocmondriaan.nl/alle-opleidingen'" height="500">
-
     </div>
-
-
   </div>
 </template>
 
@@ -58,10 +55,8 @@ export default {
   display: grid;
   grid-template-columns: 45% 50%;
   margin-top:50px;
-}
-
-.aanmeld-blok{
-  margin-left: 60px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .section{
@@ -137,6 +132,19 @@ body {
 .accordion > input[type="checkbox"]:checked ~ .handle label:before {
   content: "-";
   color:lawngreen;
+}
+
+
+@media screen and (max-width: 768px){
+  .container{
+    grid-template-columns: minmax(0,1fr);
+  }
+}
+
+@media screen and (max-width: 480px){
+  .container {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 </style>
