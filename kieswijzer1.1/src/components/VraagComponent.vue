@@ -43,11 +43,16 @@ export default {
       lengtenVragen: vragenData.vragen.length,
       iteratie:0,
       geklikteButton:true,
-      Ict:0,
-      AenM:0,
-      TenI:0,
-      Mei:0,
-      BenI:0
+      allPoints:[
+        {name: "Ict", points: 0},
+        {name: "AenM", points: 0},
+        {name: "TenI", points: 0},
+        {name: "Mei", points: 0},
+        {name: "BenI", points: 0}
+      ],
+      numer1:"",
+      numer2:"",
+      numer3:""
     }
   },
   methods:{
@@ -58,39 +63,51 @@ export default {
         this.vraag = vragenData.vragen[this.iteratie].vraag
       }
     },
-    falseGeklikt(){
-      this.geklikteButton = false
-      //console.log(this.geklikteButton +" "+ this.iteratie)
-      if(this.geklikteButton === vragenData.vragen[this.iteratie].juistenAntwoord){
-        this.Ict += vragenData.vragen[this.iteratie].puntenIct
-        this.AenM += vragenData.vragen[this.iteratie].puntenAenM
-        this.BenI += vragenData.vragen[this.iteratie].puntenBeni
-        this.TenI += vragenData.vragen[this.iteratie].puntenTeni
-        this.Mei += vragenData.vragen[this.iteratie].puntenMei
-        //alert(this.Ict )
-        //console.log("gelijk")
+    controle() {
+      if (this.iteratie < this.lengtenVragen -1)
+      {
+        if(this.geklikteButton === vragenData.vragen[this.iteratie].juistenAntwoord){
+          this.allPoints[0].points += vragenData.vragen[this.iteratie].puntenIct
+          this.allPoints[1].points += vragenData.vragen[this.iteratie].puntenAenM
+          this.allPoints[2].points += vragenData.vragen[this.iteratie].puntenTeni
+          this.allPoints[3].points += vragenData.vragen[this.iteratie].puntenMei
+          this.allPoints[4].points += vragenData.vragen[this.iteratie].puntenBeni
+        }
         this.next()
       }
       else{
-        this.next()
+        //console.log("punten ict: " + this.allPoints[0].points)
+        //console.log("punten AenM: " + this.allPoints[1].points)
+        //console.log("punten TenI: " + this.allPoints[2].points)
+        //console.log("punten Mei: " + this.allPoints[3].points)
+        //console.log("punten BenI: " + this.allPoints[4].points)
+
+        this.allPoints.sort((a, b) => {
+          return a.points - b.points
+        })
+
+        //console.log(this.allPoints)
+
+        this.numer1 = this.allPoints[4].name
+        this.numer2 = this.allPoints[3].name
+        this.numer3 = this.allPoints[2].name
+
+        //console.log("jouw nummer een is: " + this.numer1)
+        //console.log("jouw nummer twee is: " + this.numer2)
+        //console.log("jouw nummer drie is: " + this.numer3)
+        alert("dit is het einde van de vragen lijst")
+        alert("jouw nummer een is: " + this.numer1)
+        alert("jouw nummer twee is: " + this.numer2)
+        alert("jouw nummer drie is: " + this.numer3)
       }
+    },
+    falseGeklikt(){
+      this.geklikteButton = false
+      this.controle()
     },
     trueGeklikt(){
       this.geklikteButton = true
-      //console.log(this.geklikteButton +" "+ this.iteratie)
-      if(this.geklikteButton === vragenData.vragen[this.iteratie].juistenAntwoord){
-        this.Ict += vragenData.vragen[this.iteratie].puntenIct
-        this.AenM += vragenData.vragen[this.iteratie].puntenAenM
-        this.BenI += vragenData.vragen[this.iteratie].puntenBeni
-        this.TenI += vragenData.vragen[this.iteratie].puntenTeni
-        this.Mei += vragenData.vragen[this.iteratie].puntenMei
-        //console.log("gelijk")
-        //alert(this.Ict)
-        this.next()
-      }
-      else{
-        this.next()
-      }
+      this.controle()
     }
   }
 }
@@ -156,6 +173,7 @@ export default {
   height: 0px;
 }
 #point{
+  margin-left:0px;
   margin-top: -5px;
   width: 10px;
   height: 10px;
@@ -165,7 +183,5 @@ export default {
 }
 #rechts{
   width: 5%;
-
 }
-
 </style>
