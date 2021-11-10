@@ -4,7 +4,7 @@ import VraagComponent from "../components/VraagComponent";
 import Resultaten from "../components/Resultaten";
 import Informatie from "../components/Informatie";
 
-
+//de routes worden hier aangegeven
 const routes=[
         {
             path:'/kieswijzer',
