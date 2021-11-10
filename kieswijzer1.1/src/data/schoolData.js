@@ -1,6 +1,6 @@
-const informatieData =
+const schoolData =
     {
-        informatie:[
+        schoolInfo:[
             {
                 id:1,
                 title:'Autotechniek en Mobiliteit',
@@ -18,7 +18,7 @@ const informatieData =
                     'Wil je autoschades herstellen, kies dan voor een opleiding binnen de Carrosserietechniek. ' +
                     'Je werkt als autoschadehersteller of autospuiter bij een autoschadeherstelbedrijf.',
                 contact: 'info@rocmondriaan.nl | Algemeen nummer T: 088-6663300',
-                image1:'',
+                image1:'ICT.jpg',
                 image2:'',
                 image3:''
             },
@@ -41,7 +41,7 @@ const informatieData =
                     'Als timmerman, metselaar of tegelzetter werk je met je handen. Je bent een echte vakman' +
                     'met oog voor details. Altijd al schilder willen worden? Ook in de onderhoud en afbouwsector' +
                     'volgen we de laatste innovaties waar je een uitstekende toekomst in kan maken.',
-                image1:'',
+                image1:'ICT.jpg',
                 image2:'',
                 image3:''
             },
@@ -52,7 +52,7 @@ const informatieData =
                     'Alles om je heen is techniek! Je kunt kiezen voor de aanleg en het onderhoud' +
                     ' van elektrische-, verwarmings-, lucht- en waterinstallaties. Bij metaaltechniek' +
                     ' maak je constructies van staal en kunststof voor de industrie en scheepvaart.',
-                image1:'',
+                image1:'ICT.jpg',
                 image2:'',
                 image3:''
             },
@@ -75,7 +75,7 @@ const informatieData =
                     'Met onze opleidingen mechatronica leer je precies hoe dit in elkaar steekt en kun ' +
                     'je na je opleiding snel aan de slag. Bijvoorbeeld als monteur. Welke richting je ' +
                     'ook kiest, je biedt graag de beste oplossing voor de hulpvraag van elke klant.',
-                image1:'',
+                image1:'ICT.jpg',
                 image2:'',
                 image3:''
             },
@@ -94,12 +94,12 @@ const informatieData =
                     'uitleg te geven over het gemaakte product.' +
                     '' +
                     'Moderne devices, sociale netwerken en nieuwe media vragen om nieuwe manieren van communiceren, dus genoeg kansen in de ICT.',
-                image1:'',
+                image1:'ICT.jpg',
                 image2:'',
                 image3:''
             }
 
-
-
         ]
     }
+
+export default schoolData;

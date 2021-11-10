@@ -4,16 +4,16 @@
   </div>
   <div class="container">
       <div class="column">
-        <button class="resultatenButton">Autotechniek</button>
-        <img src="../assets/ICT.jpg" alt="Autotechniek">
+        <button class="resultatenButton">{{ title }}</button>
+        <img src="{{ img }}" alt="Autotechniek">
       </div>
       <div class="column">
-        <button class="resultatenButton">ICT</button>
-        <img src="../assets/ICT.jpg" alt="Elektro">
+        <button class="resultatenButton">{{ title }}</button>
+        <img src="{{ img }}" alt="Elektro">
       </div>
       <div class="column">
-        <button class="resultatenButton">Mobiel</button>
-        <img src="../assets/ICT.jpg" alt="ICT" >
+        <button class="resultatenButton">{{ title }}</button>
+        <img src="{{ img }}" alt="ICT" >
       </div>
   </div>
   <div class="container-aanmelden">
@@ -28,9 +28,26 @@
 </template>
 
 <script>
+
+import mixins from "../mixins/schoolMixins";
 export default {
-  name: "Resultaten"
+  name: "Resultaten",
+  mixins: [mixins],
+  data() {
+    return {
+
+    }
+  },
+
+  methods: {
+    scholenToner(){
+      for (var i = 0; i < this.schoolData.schoolInfo.length; i++){
+        // toon de inhoud
+      }
+    }
+  }
 }
+
 </script>
 
 <style scoped>
