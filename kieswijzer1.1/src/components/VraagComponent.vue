@@ -26,9 +26,15 @@
 <script>
 
 import vragenData from '../data/vragenData'
+import router from "../router";
 
 export default {
   name: "VraagComponent",
+  props: {
+    nummer1: this.nummer1,
+    nummer2: this.nummer2,
+    nummer3: this.nummer3
+  },
   data() {
     return{
       vragenData,
@@ -94,13 +100,15 @@ export default {
         this.nummer2 = this.allPoints[3].name
         this.nummer3 = this.allPoints[2].name
 
+        router.push('resultaten')
         //console.log("jouw nummer een is: " + this.numer1)
         //console.log("jouw nummer twee is: " + this.numer2)
         //console.log("jouw nummer drie is: " + this.numer3)
-        alert("dit is het einde van de vragen lijst")
-        alert("jouw nummer een is: " + this.nummer1)
-        alert("jouw nummer twee is: " + this.nummer2)
-        alert("jouw nummer drie is: " + this.nummer3)
+
+        //alert("dit is het einde van de vragen lijst")
+        //alert("jouw nummer een is: " + this.nummer1)
+        //alert("jouw nummer twee is: " + this.nummer2)
+        //alert("jouw nummer drie is: " + this.nummer3)
       }
     },
     //button false func. controle uitgevoerd
