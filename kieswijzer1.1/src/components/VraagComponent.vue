@@ -30,11 +30,7 @@ import router from "../router";
 
 export default {
   name: "VraagComponent",
-  props: {
-    nummer1: this.nummer1,
-    nummer2: this.nummer2,
-    nummer3: this.nummer3
-  },
+
   data() {
     return{
       vragenData,
