@@ -50,20 +50,21 @@ export default {
         {name: "Mei", points: 0},
         {name: "BenI", points: 0}
       ],
-      numer1:"",
-      numer2:"",
-      numer3:""
+      nummer1:"",
+      nummer2:"",
+      nummer3:""
     }
   },
   methods:{
     next(){
+      //doet vraag + 1
       this.iteratie++
-      if(this.iteratie <= this.lengtenVragen){
-        this.id = vragenData.vragen[this.iteratie].id
-        this.vraag = vragenData.vragen[this.iteratie].vraag
-      }
+      this.id = vragenData.vragen[this.iteratie].id
+      this.vraag = vragenData.vragen[this.iteratie].vraag
+
     },
     controle() {
+      //
       if (this.iteratie < this.lengtenVragen -1)
       {
         if(this.geklikteButton === vragenData.vragen[this.iteratie].juistenAntwoord){
@@ -82,25 +83,27 @@ export default {
         //console.log("punten Mei: " + this.allPoints[3].points)
         //console.log("punten BenI: " + this.allPoints[4].points)
 
+        //sorteert de puntenverdeling met sort
         this.allPoints.sort((a, b) => {
           return a.points - b.points
         })
 
         //console.log(this.allPoints)
-
-        this.numer1 = this.allPoints[4].name
-        this.numer2 = this.allPoints[3].name
-        this.numer3 = this.allPoints[2].name
+        // nummer 4 is de grootste
+        this.nummer1 = this.allPoints[4].name
+        this.nummer2 = this.allPoints[3].name
+        this.nummer3 = this.allPoints[2].name
 
         //console.log("jouw nummer een is: " + this.numer1)
         //console.log("jouw nummer twee is: " + this.numer2)
         //console.log("jouw nummer drie is: " + this.numer3)
         alert("dit is het einde van de vragen lijst")
-        alert("jouw nummer een is: " + this.numer1)
-        alert("jouw nummer twee is: " + this.numer2)
-        alert("jouw nummer drie is: " + this.numer3)
+        alert("jouw nummer een is: " + this.nummer1)
+        alert("jouw nummer twee is: " + this.nummer2)
+        alert("jouw nummer drie is: " + this.nummer3)
       }
     },
+    //button false func. controle uitgevoerd
     falseGeklikt(){
       this.geklikteButton = false
       this.controle()
