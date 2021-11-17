@@ -30,6 +30,7 @@ import router from "../router";
 
 export default {
   name: "VraagComponent",
+
   data() {
     return{
       vragenData,
@@ -100,7 +101,7 @@ export default {
         //console.log("jouw nummer een is: " + this.numer1)
         //console.log("jouw nummer twee is: " + this.numer2)
         //console.log("jouw nummer drie is: " + this.numer3)
-        alert("dit is het einde van de vragen lijst")
+        alert("dit is het einde van de vragen lijst");
         alert("jouw nummer een is: " + this.nummer1)
         alert("jouw nummer twee is: " + this.nummer2)
         alert("jouw nummer drie is: " + this.nummer3)
