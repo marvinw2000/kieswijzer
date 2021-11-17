@@ -5,7 +5,7 @@
       <section class="accordion">
         <input type="checkbox" name="collapse" id="handle1" checked="checked">
         <h2 class="handle">
-         <label for="handle1">Autotechniek en mobilitiet</label>
+         <label for="handle1">{{ n1 }}</label>
         </h2>
           <div class="content">
             <p><strong>Overall Impression:</strong> A pale, bitter, highly attenuated and well carbonated Trappist ale, showing a fruity-spicy Trappist yeast character, a spicy-floral hop profile, and a soft, supportive grainy-sweet malt palate.</p>
@@ -15,7 +15,7 @@
       <section class="accordion">
         <input type="checkbox" name="collapse2" id="handle2">
         <h2 class="handle">
-        <label for="handle2">Metaal-, elektro en installatietechniek</label>
+        <label for="handle2">{{ n2 }}</label>
         </h2>
           <div class="content">
             <p><strong>Overall Impression:</strong> A deep reddish-copper, moderately strong, malty, complex Trappist ale with rich malty flavors, dark or dried fruit esters, and light alcohol blended together in a malty presentation that still finishes fairly dry.</p>
@@ -25,7 +25,7 @@
       <section class="accordion">
         <input type="checkbox" name="collapse2" id="handle3">
         <h2 class="handle">
-        <label for="handle3">ICT</label>
+        <label for="handle3">{{ n3 }}</label>
         </h2>
           <div class="content">
             <p><strong>Overall Impression:</strong> A pale, somewhat spicy, dry, strong Trappist ale with a pleasant rounded malt flavor and firm bitterness. Quite aromatic, with spicy, fruity, and light alcohol notes combining with the supportive clean malt character to produce a surprisingly drinkable beverage considering the high alcohol level.</p>
@@ -42,6 +42,11 @@
 <script>
 export default {
   name: "Informatie",
+  props: [
+    'n1',
+    'n2',
+    'n3'
+  ],
   data() {
     return {
     }

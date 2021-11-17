@@ -21,15 +21,28 @@
   <div id="rechts"></div>
 </div>
 
+
+  <Resultaten v-bind:n1="nummer1" :n2="nummer2" :n3="nummer3"/>
+  <Informatie v-bind:n1="nummer1" :n2="nummer2" :n3="nummer3"/>
+
 </template>
 
 <script>
 
+
 import vragenData from '../data/vragenData'
-import router from "../router";
+//import router from "../router";
+import Resultaten from "./Resultaten";
+import Informatie from "./Informatie";
 
 export default {
   name: "VraagComponent",
+  components:{
+    Resultaten,
+    Informatie
+
+  },
+
 
   data() {
     return{
@@ -96,7 +109,7 @@ export default {
         this.nummer2 = this.allPoints[3].name
         this.nummer3 = this.allPoints[2].name
 
-        router.push('resultaten')
+
 
         //console.log("jouw nummer een is: " + this.numer1)
         //console.log("jouw nummer twee is: " + this.numer2)
@@ -105,6 +118,8 @@ export default {
         alert("jouw nummer een is: " + this.nummer1)
         alert("jouw nummer twee is: " + this.nummer2)
         alert("jouw nummer drie is: " + this.nummer3)
+
+       // router.push('resultaten')
 
 
       }

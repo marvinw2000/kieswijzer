@@ -3,21 +3,22 @@
     <h1>Best passende techniek scholen</h1>
   </div>
   <div class="container">
+
       <div class="column">
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">1 - Autotechniek</button>
+          <button class="resultatenButton">{{ $props.n1 }}</button>
         </router-link>
         <img src="../assets/ICT.jpg" alt="Autotechniek">
       </div>
       <div class="column">
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">2 - ICT</button>
+          <button class="resultatenButton">{{ $props.n2 }}</button>
         </router-link>
         <img src="../assets/ICT.jpg" alt="Elektro">
       </div>
       <div class="column">
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">3 - Mobiel</button>
+          <button class="resultatenButton">{{ $props.n3 }}</button>
         </router-link>
         <img src="../assets/ICT.jpg" alt="ICT" >
       </div>
@@ -30,13 +31,22 @@
       <button class="buttonColumn" type="button" formtarget="_blank" onclick="window.location.href='https://rocmondriaan.nl/alle-opleidingen'">Meld je nu aan</button>
     </div>
 
+
   </div>
 </template>
 
 <script>
+
 export default {
-  name: "Resultaten"
+  name: "Resultaten",
+  props:[
+      'n1',
+      'n2',
+      'n3'
+  ]
 }
+
+
 </script>
 
 <style scoped>
