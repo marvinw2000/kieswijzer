@@ -5,6 +5,7 @@
   <div class="container">
 
       <div class="column">
+        <h2 class="nummer">1</h2>
         <router-link to="/informatie" class="informatie" exact>
           <button class="resultatenButton">{{ titelPlaats1 }}</button>
         </router-link>
@@ -12,6 +13,7 @@
       </div>
 
       <div class="column">
+        <h2 class="nummer">2</h2>
         <router-link to="/informatie" class="informatie" exact>
           <button class="resultatenButton">{{ titelPlaats2 }}</button>
         </router-link>
@@ -19,6 +21,7 @@
       </div>
 
       <div class="column">
+        <h2 class="nummer">3</h2>
         <router-link to="/informatie" class="informatie" exact>
           <button class="resultatenButton">{{ titelPlaats3 }}</button>
         </router-link>
@@ -77,7 +80,10 @@ export default {
 </script>
 
 <style scoped>
-
+.nummer{
+  margin: 3px;
+  color: red;
+}
 .headerTekst{
   width: 100%;
   text-align: center;
