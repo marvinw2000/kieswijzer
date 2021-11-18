@@ -34,8 +34,15 @@
 </template>
 
 <script>
+//import VraagComponent from "./VraagComponent";
+//import vragenData from "../data/vragenData";
 export default {
-  name: "Resultaten"
+
+  data() {
+    return{
+
+    }
+  }
 }
 </script>
 
