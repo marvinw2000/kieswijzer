@@ -42,11 +42,6 @@
 <script>
 export default {
   name: "Informatie",
-  props: [
-    'n1',
-    'n2',
-    'n3'
-  ],
   data() {
     return {
     }

@@ -8,21 +8,21 @@
         <router-link to="/informatie" class="informatie" exact>
           <button class="resultatenButton">{{ titelPlaats1 }}</button>
         </router-link>
-        <img src="../assets/ICT.jpg" >
+        <img v-bind:src="fotoPlaats1" >
       </div>
 
       <div class="column">
         <router-link to="/informatie" class="informatie" exact>
           <button class="resultatenButton">{{ titelPlaats2 }}</button>
         </router-link>
-        <img src="../assets/ICT.jpg" >
+        <img v-bind:src="fotoPlaats2" >
       </div>
 
       <div class="column">
         <router-link to="/informatie" class="informatie" exact>
           <button class="resultatenButton">{{ titelPlaats3 }}</button>
         </router-link>
-        <img src="../assets/ICT.jpg" >
+        <img v-bind:src="fotoPlaats3" >
       </div>
   </div>
   <div class="container-aanmelden">
@@ -42,9 +42,9 @@ export default {
   name: "Resultaten",
   data() {
     return{
-      //fotoPlaats1: '../assets/ICT.jpg',
-      //fotoPlaats2: schoolData.schoolInfo[0].image1,
-      //fotoPlaats3: schoolData.schoolInfo[0].image1,
+      fotoPlaats1: schoolData.schoolInfo[0].image1,
+      fotoPlaats2: schoolData.schoolInfo[0].image1,
+      fotoPlaats3: schoolData.schoolInfo[0].image1,
       titelPlaats1:"",
       titelPlaats2:"",
       titelPlaats3:"",
@@ -57,21 +57,20 @@ export default {
     this.toonAntwoord()
   },
   methods:{
+    //functie om antwoord te tonen
     toonAntwoord(){
+      //haal benodigde variabele op
       this.n1 = sessionStorage.getItem("n1")
       this.n2 = sessionStorage.getItem("n2")
       this.n3 = sessionStorage.getItem("n3")
-
+      //verander titel
       this.titelPlaats1 = schoolData.schoolInfo[this.n1].title
       this.titelPlaats2 = schoolData.schoolInfo[this.n2].title
       this.titelPlaats3 = schoolData.schoolInfo[this.n3].title
-
-      //this.fotoPlaats1 = schoolData.schoolInfo[this.n1].image1
-      //this.fotoPlaats2 = schoolData.schoolInfo[this.n2].image1
-      //this.fotoPlaats3 = schoolData.schoolInfo[this.n3].image1
-      //console.log(this.fotoPlaats1)
-      //console.log(this.fotoPlaats2)
-      //console.log(this.fotoPlaats3)
+      //verander afbeelding
+      this.fotoPlaats1 = schoolData.schoolInfo[this.n1].image1
+      this.fotoPlaats2 = schoolData.schoolInfo[this.n2].image1
+      this.fotoPlaats3 = schoolData.schoolInfo[this.n3].image1
     }
   }
 }

@@ -60,64 +60,60 @@ export default {
     }
   },
   methods:{
+    //functie om naar de volgende vraag te gaan
     next(){
       //doet vraag + 1
       this.iteratie++
+      //het nummer van de vraag word veranderd
       this.id = vragenData.vragen[this.iteratie].id
+      //de titel word veranderd
       this.vraag = vragenData.vragen[this.iteratie].vraag
-
     },
+    //functie om punten te controleren en verdelen
     controle() {
-      //
+      //controleert of er nog vragen zijn
       if (this.iteratie < this.lengtenVragen -1)
-      {
+      {//controleert of de juiste button is geklikt
         if(this.geklikteButton === vragenData.vragen[this.iteratie].juistenAntwoord){
+          //punten worden verdeeld
           this.allPoints[0].points += vragenData.vragen[this.iteratie].puntenIct
           this.allPoints[1].points += vragenData.vragen[this.iteratie].puntenAenM
           this.allPoints[2].points += vragenData.vragen[this.iteratie].puntenTeni
           this.allPoints[3].points += vragenData.vragen[this.iteratie].puntenMei
           this.allPoints[4].points += vragenData.vragen[this.iteratie].puntenBeni
         }
+        //functie next word aangeroepen
         this.next()
       }
       else{
-        //console.log("punten ict: " + this.allPoints[0].points)
-        //console.log("punten AenM: " + this.allPoints[1].points)
-        //console.log("punten TenI: " + this.allPoints[2].points)
-        //console.log("punten Mei: " + this.allPoints[3].points)
-        //console.log("punten BenI: " + this.allPoints[4].points)
-
-        //sorteert de puntenverdeling met sort
+        //allen vragen zijn beantwoord
+        //sorteert de lijst met punten
         this.allPoints.sort((a, b) => {
           return a.points - b.points
         })
-
-        //console.log(this.allPoints)
         // nummer 4 is de grootste
         this.nummer1 = this.allPoints[4].id
         this.nummer2 = this.allPoints[3].id
         this.nummer3 = this.allPoints[2].id
-
-        //console.log("jouw nummer een is: " + this.numer1)
-        //console.log("jouw nummer twee is: " + this.numer2)
-        //console.log("jouw nummer drie is: " + this.numer3)
-        alert("dit is het einde van de vragen lijst");
-        alert("jouw nummer een is: " + this.allPoints[4].name+" "+this.nummer1)
-        alert("jouw nummer twee is: " +this.allPoints[3].name+" " +this.nummer2)
-        alert("jouw nummer drie is: " + this.allPoints[2].name+" "+this.nummer3)
+        //de top 3 word opgeslagen in de html session
         sessionStorage.setItem("n1",this.nummer1)
         sessionStorage.setItem("n2",this.nummer2)
         sessionStorage.setItem("n3",this.nummer3)
-        router.push('resultaten')
+        router.push('resultaten')//hiermee ga je naar de resultaaten pagina
       }
     },
-    //button false func. controle uitgevoerd
+    //button voor als je op vals geklikt hebt
     falseGeklikt(){
+      //staat geklikteButton veranderd
       this.geklikteButton = false
+      //roept controle functie aan
       this.controle()
     },
+    //button voor als je op true geklikt hebt
     trueGeklikt(){
+      //staat geklikteButton veranderd
       this.geklikteButton = true
+      //roept controle functie aan
       this.controle()
     }
   }
