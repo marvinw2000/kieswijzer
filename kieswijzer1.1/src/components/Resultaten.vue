@@ -6,21 +6,23 @@
 
       <div class="column">
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">{{ $props.n1 }}</button>
+          <button class="resultatenButton">{{ titelPlaats1 }}</button>
         </router-link>
-        <img src="../assets/ICT.jpg" alt="Autotechniek">
+        <img src="../assets/ICT.jpg" >
       </div>
+
       <div class="column">
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">{{ $props.n2 }}</button>
+          <button class="resultatenButton">{{ titelPlaats2 }}</button>
         </router-link>
-        <img src="../assets/ICT.jpg" alt="Elektro">
+        <img src="../assets/ICT.jpg" >
       </div>
+
       <div class="column">
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">{{ $props.n3 }}</button>
+          <button class="resultatenButton">{{ titelPlaats3 }}</button>
         </router-link>
-        <img src="../assets/ICT.jpg" alt="ICT" >
+        <img src="../assets/ICT.jpg" >
       </div>
   </div>
   <div class="container-aanmelden">
@@ -30,23 +32,49 @@
     <div class="footerButton">
       <button class="buttonColumn" type="button" formtarget="_blank" onclick="window.location.href='https://rocmondriaan.nl/alle-opleidingen'">Meld je nu aan</button>
     </div>
-
-
   </div>
 </template>
 
 <script>
+import schoolData from "../data/schoolData";
 
 export default {
   name: "Resultaten",
-  props:[
-      'n1',
-      'n2',
-      'n3'
-  ]
+  data() {
+    return{
+      //fotoPlaats1: '../assets/ICT.jpg',
+      //fotoPlaats2: schoolData.schoolInfo[0].image1,
+      //fotoPlaats3: schoolData.schoolInfo[0].image1,
+      titelPlaats1:"",
+      titelPlaats2:"",
+      titelPlaats3:"",
+      n1:0,
+      n2:0,
+      n3:0
+    }
+  },
+  mounted() {
+    this.toonAntwoord()
+  },
+  methods:{
+    toonAntwoord(){
+      this.n1 = sessionStorage.getItem("n1")
+      this.n2 = sessionStorage.getItem("n2")
+      this.n3 = sessionStorage.getItem("n3")
+
+      this.titelPlaats1 = schoolData.schoolInfo[this.n1].title
+      this.titelPlaats2 = schoolData.schoolInfo[this.n2].title
+      this.titelPlaats3 = schoolData.schoolInfo[this.n3].title
+
+      //this.fotoPlaats1 = schoolData.schoolInfo[this.n1].image1
+      //this.fotoPlaats2 = schoolData.schoolInfo[this.n2].image1
+      //this.fotoPlaats3 = schoolData.schoolInfo[this.n3].image1
+      //console.log(this.fotoPlaats1)
+      //console.log(this.fotoPlaats2)
+      //console.log(this.fotoPlaats3)
+    }
+  }
 }
-
-
 </script>
 
 <style scoped>

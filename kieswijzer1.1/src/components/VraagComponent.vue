@@ -21,29 +21,18 @@
   <div id="rechts"></div>
 </div>
 
-
-  <Resultaten v-bind:n1="nummer1" :n2="nummer2" :n3="nummer3"/>
-  <Informatie v-bind:n1="nummer1" :n2="nummer2" :n3="nummer3"/>
-
 </template>
 
 <script>
 
 
 import vragenData from '../data/vragenData'
-//import router from "../router";
-import Resultaten from "./Resultaten";
-import Informatie from "./Informatie";
+import router from "../router";
+//import Resultaten from "./Resultaten";
+//import Informatie from "./Informatie";
 
 export default {
   name: "VraagComponent",
-  components:{
-    Resultaten,
-    Informatie
-
-  },
-
-
   data() {
     return{
       vragenData,
@@ -59,11 +48,11 @@ export default {
       iteratie:0,
       geklikteButton:true,
       allPoints:[
-        {name: "Ict", points: 0},
-        {name: "AenM", points: 0},
-        {name: "TenI", points: 0},
-        {name: "Mei", points: 0},
-        {name: "BenI", points: 0}
+        {id: 0, name: "Ict", points: 0},
+        {id: 1, name: "AenM", points: 0},
+        {id: 2, name: "TenI", points: 0},
+        {id: 3, name: "Mei", points: 0},
+        {id: 4, name: "BenI", points: 0}
       ],
       nummer1:"",
       nummer2:"",
@@ -105,23 +94,21 @@ export default {
 
         //console.log(this.allPoints)
         // nummer 4 is de grootste
-        this.nummer1 = this.allPoints[4].name
-        this.nummer2 = this.allPoints[3].name
-        this.nummer3 = this.allPoints[2].name
-
-
+        this.nummer1 = this.allPoints[4].id
+        this.nummer2 = this.allPoints[3].id
+        this.nummer3 = this.allPoints[2].id
 
         //console.log("jouw nummer een is: " + this.numer1)
         //console.log("jouw nummer twee is: " + this.numer2)
         //console.log("jouw nummer drie is: " + this.numer3)
         alert("dit is het einde van de vragen lijst");
-        alert("jouw nummer een is: " + this.nummer1)
-        alert("jouw nummer twee is: " + this.nummer2)
-        alert("jouw nummer drie is: " + this.nummer3)
-
-       // router.push('resultaten')
-
-
+        alert("jouw nummer een is: " + this.allPoints[4].name+" "+this.nummer1)
+        alert("jouw nummer twee is: " +this.allPoints[3].name+" " +this.nummer2)
+        alert("jouw nummer drie is: " + this.allPoints[2].name+" "+this.nummer3)
+        sessionStorage.setItem("n1",this.nummer1)
+        sessionStorage.setItem("n2",this.nummer2)
+        sessionStorage.setItem("n3",this.nummer3)
+        router.push('resultaten')
       }
     },
     //button false func. controle uitgevoerd
