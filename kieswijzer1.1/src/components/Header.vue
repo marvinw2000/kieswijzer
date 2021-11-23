@@ -34,9 +34,11 @@ export default
 }
 .upper{
   width: 100%;
-  border-bottom: solid #999 1px;
+  border-bottom: 1px solid #D8D8D8;
+  border-inline-width: 30px;
   display: flex;
 }
+
 .buttonOpleidingen{
   margin-left: auto;
 }
