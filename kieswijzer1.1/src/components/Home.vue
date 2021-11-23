@@ -22,6 +22,7 @@ export default {
 @media (min-width: 700px){
 }
 *{
+  color: #fff;
   margin: 0px;
 }
 body{

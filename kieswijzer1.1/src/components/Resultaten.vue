@@ -1,6 +1,9 @@
 <template>
   <div class="headerTekst">
-    <h1>Best passende techniek scholen</h1>
+    <h1>Word jij de Mondriaan van...</h1>
+    <p>
+      Hieronder zijn de top drie techniek scholen weergegeven op basis van jouw studiekeuzetest. Klik op de opleiding voor meer informatie!
+    </p>
   </div>
   <div class="container">
 
@@ -8,24 +11,24 @@
         <h2 class="nummer">1</h2>
         <router-link to="/informatie" class="informatie" exact>
           <button class="resultatenButton">{{ titelPlaats1 }}</button>
+          <img v-bind:src="fotoPlaats1" >
         </router-link>
-        <img v-bind:src="fotoPlaats1" >
       </div>
 
       <div class="column">
         <h2 class="nummer">2</h2>
         <router-link to="/informatie" class="informatie" exact>
           <button class="resultatenButton">{{ titelPlaats2 }}</button>
+          <img v-bind:src="fotoPlaats2" >
         </router-link>
-        <img v-bind:src="fotoPlaats2" >
       </div>
 
       <div class="column">
         <h2 class="nummer">3</h2>
         <router-link to="/informatie" class="informatie" exact>
           <button class="resultatenButton">{{ titelPlaats3 }}</button>
+          <img v-bind:src="fotoPlaats3" >
         </router-link>
-        <img v-bind:src="fotoPlaats3" >
       </div>
   </div>
   <div class="container-aanmelden">
@@ -50,10 +53,6 @@ export default {
 
 
 <style scoped>
-.nummer{
-  margin: 3px;
-  color: red;
-}
 .headerTekst{
   width: 100%;
   text-align: center;
@@ -61,10 +60,10 @@ export default {
 }
 
 .container{
-  width: 100%;
   display: grid;
   grid-template-columns: 33% 33% 33% ;
   text-align: center;
+  margin-top: 3%;
 }
 
 .column{
@@ -72,12 +71,21 @@ export default {
   margin-right: 20px;
 }
 
+.nummer{
+  width: 33%;
+  font-size: 20px;
+  color: white;
+  background-color: #E20D18;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px ;
+
+}
+
 .resultatenButton{
   background-color: #1a61a1;
   color:white;
   font-size: 15px;
   padding: 12px 18px 12px 18px;
-  margin-top: 20px;
   margin-right: 35px;
   border: none;
   border-radius: 5px;
@@ -85,6 +93,7 @@ export default {
   width: 100%;
   border-bottom: 3px solid #1a49a1;
   transition: all .2s ease;
+  cursor: pointer;
 }
 
 .resultatenButton:hover{
