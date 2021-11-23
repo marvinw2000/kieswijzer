@@ -35,6 +35,7 @@ export default {
   margin-bottom: 30px;
 }
 .startButton{
+  cursor: pointer;
   background-color: #E20D18;
   color: white;
   font-size: 40px;
