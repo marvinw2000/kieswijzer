@@ -3,8 +3,8 @@
     <div class="homeContainer">
      <h1 class="homeHeaderText">Heb jij al een keuze gemaakt?</h1>
       <p>
-        orem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-        Aenean vitae ullamcorper neque
+        word jij de nieuwe mondriaan.<br>
+        twijfel je nog maak nu de kieswijzer
       </p>
       <router-link to="/vragen" class="start" exact>
          <button class="startButton" type="button">Start kieswijzer!</button>

@@ -3,23 +3,29 @@
     <h1>Best passende techniek scholen</h1>
   </div>
   <div class="container">
+
       <div class="column">
+        <h2 class="nummer">1</h2>
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">1 - Autotechniek</button>
+          <button class="resultatenButton">{{ titelPlaats1 }}</button>
         </router-link>
-        <img src="../assets/ICT.jpg" alt="Autotechniek">
+        <img v-bind:src="fotoPlaats1" >
       </div>
+
       <div class="column">
+        <h2 class="nummer">2</h2>
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">2 - ICT</button>
+          <button class="resultatenButton">{{ titelPlaats2 }}</button>
         </router-link>
-        <img src="../assets/ICT.jpg" alt="Elektro">
+        <img v-bind:src="fotoPlaats2" >
       </div>
+
       <div class="column">
+        <h2 class="nummer">3</h2>
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">3 - Mobiel</button>
+          <button class="resultatenButton">{{ titelPlaats3 }}</button>
         </router-link>
-        <img src="../assets/ICT.jpg" alt="ICT" >
+        <img v-bind:src="fotoPlaats3" >
       </div>
   </div>
   <div class="container-aanmelden">
@@ -29,25 +35,25 @@
     <div class="footerButton">
       <button class="buttonColumn" type="button" formtarget="_blank" onclick="window.location.href='https://rocmondriaan.nl/alle-opleidingen'">Meld je nu aan</button>
     </div>
-
   </div>
 </template>
 
 <script>
-//import VraagComponent from "./VraagComponent";
-//import vragenData from "../data/vragenData";
+import mixins from "../mixins/mixins";
+
 export default {
-
-  data() {
-    return{
-
-    }
-  }
+  name: "Resultaten",
+  mixins:[mixins]
 }
+
 </script>
 
-<style scoped>
 
+<style scoped>
+.nummer{
+  margin: 3px;
+  color: red;
+}
 .headerTekst{
   width: 100%;
   text-align: center;

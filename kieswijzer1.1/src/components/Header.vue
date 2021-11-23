@@ -4,9 +4,6 @@
       <div id="logo">
         <img  v-bind:src="logoHeader" :alt="logoHeader"/>
       </div>
-      <div class="buttonOpleidingen">
-        <button class="headerButton" type="button">opleidingen</button>
-      </div>
     </div>
   </header>
 </template>
