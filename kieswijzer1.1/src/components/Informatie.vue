@@ -1,8 +1,12 @@
 <template>
   <div class="container">
     <div class="section">
-      <h1>Meer informatie over de scholen</h1>
+      <h1>Word jij de Mondriaan van...</h1>
+      <p>
+        Hieronder zijn de best passenden drie techniek scholen weegegeven op basis van jouw studiekeuzetest. Lees voor meer informatie een neem contact op voor al je vragen!
+      </p>
       <section class="accordion">
+        <h2 class="nummer">1</h2>
         <input type="checkbox" name="collapse" id="handle1" checked="checked">
         <h2 class="handle">
          <label for="handle1">{{ titelPlaats1 }}</label>
@@ -12,6 +16,7 @@
           </div>
       </section>
       <section class="accordion">
+        <h2 class="nummer">2</h2>
         <input type="checkbox" name="collapse2" id="handle2">
         <h2 class="handle">
         <label for="handle2">{{ titelPlaats2 }}</label>
@@ -21,6 +26,7 @@
           </div>
       </section>
       <section class="accordion">
+        <h2 class="nummer">3</h2>
         <input type="checkbox" name="collapse2" id="handle3">
         <h2 class="handle">
         <label for="handle3">{{ titelPlaats3 }}</label>
@@ -50,8 +56,8 @@ export default {
 <style scoped>
 .container{
   display: grid;
-  grid-template-columns: 45% 50%;
-  margin-top:50px;
+  grid-template-columns: 50% 50%;
+  margin-top:30px;
   margin-left: 30px;
   margin-right: 30px;
 }
@@ -59,7 +65,6 @@ export default {
 .section{
   margin-top: 50px;
 }
-
 
 .accordion > input[type="checkbox"] {
   position: absolute;
@@ -103,17 +108,18 @@ body {
 }
 
 .accordion label {
-  color: #333;
+  color: white;
   cursor: pointer;
   font-weight: normal;
   padding: 15px;
-  background-color: white;
+  background-color: #1a61a1;
   border: 1px solid #00639d;
+  border-radius: 5px;
 }
 
 .accordion label:hover,
 .accordion label:focus {
-  background: white;
+  background: #1a49a1;
 }
 
 .accordion .handle label:before {
@@ -131,11 +137,32 @@ body {
   color:lawngreen;
 }
 
+.aanmeld-blok{
+  text-align: center;
+}
+
+
+.nummer{
+  width: 15%;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  background-color: #E20D18;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px ;
+
+}
+
+
 
 @media screen and (max-width: 768px){
   .container{
     grid-template-columns: minmax(0,1fr);
   }
+
+
+
+
 }
 
 @media screen and (max-width: 480px){
