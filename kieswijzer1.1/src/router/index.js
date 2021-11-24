@@ -8,7 +8,7 @@ import Informatie from "../components/Informatie";
 const routes=[
         {
             path:'/kieswijzer',
-            name:'home',
+            name:'kieswijzer',
             component: Home
         },
         {
