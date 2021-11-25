@@ -4,7 +4,7 @@
   <div id="midden">
     <div id="containerBinnen">
       <div id="vraag">
-        <h1>vraag {{id}}:</h1>
+        <h1>Vraag {{id}}:</h1>
         <p>{{vraag}}</p>
       </div>
       <div id="buttons">
@@ -159,6 +159,7 @@ export default {
 }
 #vraag p{
   text-align: center;
+  font-size: 1.5em;
 }
 #buttons{
   width: 100%;

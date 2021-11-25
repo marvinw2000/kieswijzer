@@ -10,7 +10,7 @@
       <div class="column">
         <h2 class="nummer">1</h2>
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">{{ titelPlaats1 }}</button>
+          <button class="resultatenButton">{{ titelPlaats1 }} <br><i>klik voor meer informatie</i></button>
           <img v-bind:src="fotoPlaats1" >
         </router-link>
       </div>
@@ -18,7 +18,7 @@
       <div class="column">
         <h2 class="nummer">2</h2>
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">{{ titelPlaats2 }}</button>
+          <button class="resultatenButton">{{ titelPlaats2 }} <br><i>klik voor meer informatie</i></button>
           <img v-bind:src="fotoPlaats2" >
         </router-link>
       </div>
@@ -26,7 +26,7 @@
       <div class="column">
         <h2 class="nummer">3</h2>
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">{{ titelPlaats3 }}</button>
+          <button class="resultatenButton">{{ titelPlaats3 }} <br><i>klik voor meer informatie</i></button>
           <img v-bind:src="fotoPlaats3" >
         </router-link>
       </div>
@@ -84,7 +84,7 @@ export default {
 .resultatenButton{
   background-color: #1a61a1;
   color:white;
-  font-size: 15px;
+  font-size: 18px;
   padding: 12px 18px 12px 18px;
   margin-right: 35px;
   border: none;
@@ -98,6 +98,10 @@ export default {
 
 .resultatenButton:hover{
   background-color: #1a49a1;
+}
+.resultatenButton i{
+  font-size: 10px;
+  color: white;
 }
 
 .container-aanmelden{
@@ -139,6 +143,7 @@ img{
 .footerButton{
   text-align: left;
 }
+
 
 @media screen and (max-width: 768px){
   .container{

@@ -41,7 +41,8 @@ export default {
   font-size: 40px;
   margin-top: 50px;
   padding: 35px 40px 35px 40px;
-  border-radius: 7px;
+  border:none;
+  border-radius: 20px;
   border-bottom: 3px solid #B50811;
   transition: all .2s ease;
 }
