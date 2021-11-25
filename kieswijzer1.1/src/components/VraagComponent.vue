@@ -15,6 +15,9 @@
         <div id="bar">
           <div id="point"></div>
         </div>
+        <div id="progesieMobile">
+          {{id +`/`+lengtenVragen}}
+        </div>
       </div>
     </div>
   </div>
@@ -168,25 +171,29 @@ export default {
 }
 .button{
   color: white;
-  padding: 40px 130px 40px 130px;
+  padding: 15px 60px 15px 60px;
   margin: 10px;
   border-radius: 15px;
   cursor: pointer;
 }
 .rood{
-  font-size: 80px;
+  font-size: 50px;
   background-color: #E20D18;
 }
 .groen{
-  font-size: 100px;
+  font-size: 70px;
   background-color: green;
 }
 #progresionBar{
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
   height: 100px;
 }
 #bar{
-  margin: 50px 25% 25px 30%;
+  display: none;
+  align-self: center;
+  margin-top: 50px;
   border: 2px solid darkgray;
   width: 500px;
   height: 0px;
@@ -200,7 +207,55 @@ export default {
   border-radius: 10px;
   background-color: cornflowerblue;
 }
+#progesieMobile{
+  align-self: center;
+  font-size: 1.5em;
+  margin-top: 30px;
+}
 #rechts{
   width: 5%;
 }
+@media (min-width: 800px) {
+  .button{
+    color: white;
+    padding: 40px 130px 40px 130px;
+    margin: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  .rood{
+    font-size: 80px;
+    background-color: #E20D18;
+  }
+  .groen{
+    font-size: 100px;
+    background-color: green;
+  }
+  #progresionBar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+  }
+  #bar{
+    display: inline-block;
+    margin-top: 50px;
+    border: 2px solid darkgray;
+    width: 500px;
+    height: 0px;
+  }
+  #point{
+    margin-left:-3px;
+    margin-top: -7px;
+    width: 15px;
+    height: 15px;
+    border: 1px cornflowerblue solid;
+    border-radius: 10px;
+    background-color: cornflowerblue;
+  }
+  #progesieMobile{
+    display: none;
+  }
+}
+
 </style>

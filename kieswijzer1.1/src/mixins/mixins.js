@@ -17,7 +17,6 @@ export default {
     },
     mounted() {
         this.toonAntwoord()
-        //this.change()
         setInterval(this.change, 3000)
     },
     methods:{
@@ -44,21 +43,18 @@ export default {
             console.log('change')
 
             if (this.fotoPlaats1 === schoolData.schoolInfo[this.n1].image1){
-                console.log('if true 1')
                 this.fotoPlaats1 = schoolData.schoolInfo[this.n1].image2
                 this.fotoPlaats2 = schoolData.schoolInfo[this.n2].image2
                 this.fotoPlaats3 = schoolData.schoolInfo[this.n3].image2
                 return
             }
             if (this.fotoPlaats1 === schoolData.schoolInfo[this.n1].image2){
-                console.log('if true 2')
                 this.fotoPlaats1 = schoolData.schoolInfo[this.n1].image3
                 this.fotoPlaats2 = schoolData.schoolInfo[this.n2].image3
                 this.fotoPlaats3 = schoolData.schoolInfo[this.n3].image3
                 return
             }
             if (this.fotoPlaats1 === schoolData.schoolInfo[this.n1].image3){
-                console.log('if true 3')
                 this.fotoPlaats1 = schoolData.schoolInfo[this.n1].image1
                 this.fotoPlaats2 = schoolData.schoolInfo[this.n2].image1
                 this.fotoPlaats3 = schoolData.schoolInfo[this.n3].image1

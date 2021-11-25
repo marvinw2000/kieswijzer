@@ -31,7 +31,7 @@ export default {
 }
 
 .homeHeaderText{
-  padding-top: 200px;
+  padding-top: 100px;
   margin-bottom: 30px;
 }
 .startButton{
