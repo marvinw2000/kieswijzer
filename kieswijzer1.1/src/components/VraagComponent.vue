@@ -16,7 +16,7 @@
           <div id="point"></div>
         </div>
         <div id="progesieMobile">
-          {{id +`/`+lengtenVragen}}
+          {{id +` van `+lengtenVragen}}
         </div>
       </div>
     </div>
