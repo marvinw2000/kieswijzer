@@ -16,9 +16,9 @@ const schoolData =
                     'uitleg te geven over het gemaakte product.' +
                     '' +
                     'Moderne devices, sociale netwerken en nieuwe media vragen om nieuwe manieren van communiceren, dus genoeg kansen in de ICT.',
-                image1:'/images/ICT.jpg',
-                image2:'',
-                image3:''
+                image1:'/images/ict1.jpg',
+                image2:'/images/ict2.jpg',
+                image3:'/images/ict3.jpg'
             },
             {    id:2,
                 title:'Autotechniek en Mobiliteit',
@@ -36,9 +36,9 @@ const schoolData =
                     'Wil je autoschades herstellen, kies dan voor een opleiding binnen de Carrosserietechniek. ' +
                     'Je werkt als autoschadehersteller of autospuiter bij een autoschadeherstelbedrijf.',
                 contact: 'info@rocmondriaan.nl | Algemeen nummer T: 088-6663300',
-                image1:'/images/Autotechniek.jpg',
-                image2:'',
-                image3:''
+                image1:'/images/autoTechniek1.jpg',
+                image2:'/images/autoTechniek2.jpg',
+                image3:'/images/autoTechniek3.jpg'
             },
             {
                 id:3,
@@ -59,9 +59,9 @@ const schoolData =
                     'Met onze opleidingen mechatronica leer je precies hoe dit in elkaar steekt en kun ' +
                     'je na je opleiding snel aan de slag. Bijvoorbeeld als monteur. Welke richting je ' +
                     'ook kiest, je biedt graag de beste oplossing voor de hulpvraag van elke klant.',
-                image1:'/images/Elektro.jpg',
-                image2:'',
-                image3:''
+                image1:'/images/elktro1.jpg',
+                image2:'/images/elktro2.jpg',
+                image3:'/images/elktro3.jpg'
             },
             {
                 id:4,
@@ -70,9 +70,9 @@ const schoolData =
                     'Alles om je heen is techniek! Je kunt kiezen voor de aanleg en het onderhoud' +
                     ' van elektrische-, verwarmings-, lucht- en waterinstallaties. Bij metaaltechniek' +
                     ' maak je constructies van staal en kunststof voor de industrie en scheepvaart.',
-                image1:'/images/lassen.jpg',
-                image2:'',
-                image3:''
+                image1:'/images/metaalTechniek1.jpg',
+                image2:'/images/metaalTechniek2.jpg',
+                image3:'/images/metaalTechniek3.jpg'
             },
             {
                 id:5,
@@ -93,9 +93,9 @@ const schoolData =
                     'Als timmerman, metselaar of tegelzetter werk je met je handen. Je bent een echte vakman' +
                     'met oog voor details. Altijd al schilder willen worden? Ook in de onderhoud en afbouwsector' +
                     'volgen we de laatste innovaties waar je een uitstekende toekomst in kan maken.',
-                image1:'/images/constructie.jpg',
-                image2:'',
-                image3:''
+                image1:'/images/constructie1.jpg',
+                image2:'/images/constructie2.jpg',
+                image3:'/images/constructie3.jpg'
             }
 
         ]
