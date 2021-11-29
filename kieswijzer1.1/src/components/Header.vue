@@ -1,22 +1,8 @@
-
 <template>
   <header>
-    <div id="upper">
+    <div class="upper">
       <div id="logo">
         <img  v-bind:src="logoHeader" :alt="logoHeader"/>
-      </div>
-      <div id="titel">
-        <h1>{{ title }}</h1>
-      </div>
-    </div>
-    <div id="lower">
-      <div id="nav">
-        <a class="button" href="">Ict</a>
-        <a class="button" href="">A&M</a>
-        <a class="button" href="">T&E</a>
-        <a class="button" href="">MEI</a>
-        <a class="button" href="">B&I</a>
-        <a class="button" href="">kieswijzer</a>
       </div>
     </div>
   </header>
@@ -28,8 +14,7 @@ export default
   data()
   {
     return{
-      title:"roc mondriaan kieswijzer",
-      logoHeader: require('@/assets/logo.jpeg')
+      logoHeader: require('@/assets/RocMondriaan.jpg')
     }
   },
   methods: {
@@ -38,34 +23,40 @@ export default
 }
 </script>
 <style scoped>
-#titel{}
-#titel h1{margin: 20px;}
+@media (min-width: 700px){
+
+}
 #logo{}
-#logo img{ height: 50px; width: 50px; margin: 20px;}
-#upper
-{
+#logo img{
+  height: 70%;
+  width: 23%;
+  margin: 20px;
+}
+.upper{
   width: 100%;
-  height: 90px;
-  border-bottom: solid #333 1px;
+  border-bottom: 1px solid #D8D8D8;
+  border-inline-width: 30px;
   display: flex;
 }
-#lower
-{
-  width: 100%;
-  height: 47px;
-  border-bottom: solid #333 1px;
-  display: flex;
+
+.buttonOpleidingen{
+  margin-left: auto;
 }
-#nav
-{
-  margin: 15px;
+
+.headerButton{
+  background-color: #E20D18;
+  color:white;
+  font-size: 15px;
+  padding: 15px 20px 15px 20px;
+  margin-top: 20px;
+  margin-right: 35px;
+  border: none;
+  border-radius: 5px;
+  border-bottom: 3px solid #B50811;
+  transition: all .2s ease;
 }
-.button
-{
-  padding: 15px;
-  text-decoration: none;
-  border-right: solid #333 1px;
-  color: black;
+.headerButton:hover{
+  background-color: red;
 }
 
 </style>

@@ -1,28 +1,25 @@
 <template>
   <div id="app">
     <Header/>
-    <div id="placeholder"></div>
-    <Footer/>
+    <router-view/>
   </div>
 </template>
 <script>
-import Header from "../src/components/Header";
-import Footer from "../src/components/Footer";
+
+import Header from "./components/Header";
 export default {
   name: 'App',
-  components: {
-    Header,
-    Footer
-  }
+  components: {Header}
 }
+
 </script>
 <style>
 *{
+  font-family: ff-scala-sans-pro,sans-serif;
+  color: #00639D;
   padding: 0px;
-  margin: 0px;
-}
-#placeholder {
-  height:425px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 </style>
