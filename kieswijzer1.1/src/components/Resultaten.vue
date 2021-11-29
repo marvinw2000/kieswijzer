@@ -1,8 +1,10 @@
 <template>
+<div id="mainContainer">
   <div class="headerTekst">
     <h1>Word jij de Mondriaan van...</h1>
     <p>
-      Hieronder zijn de top drie techniek scholen weergegeven op basis van jouw studiekeuzetest. Klik op de opleiding voor meer informatie!
+      Hieronder zijn de top drie techniek scholen weergegeven op basis van jouw studiekeuzetest.
+      <br><em id="klikHier">Klik op de opleiding voor meer informatie!</em>
     </p>
   </div>
   <div class="container">
@@ -11,7 +13,7 @@
         <h2 class="nummer">1</h2>
         <router-link to="/informatie" class="informatie" exact>
           <button class="resultatenButton">{{ titelPlaats1 }} <br><i>klik voor meer informatie</i></button>
-          <img v-bind:src="fotoPlaats1" >
+          <img class="afbeeldingVakrichting" v-bind:src="fotoPlaats1" >
         </router-link>
       </div>
 
@@ -19,7 +21,7 @@
         <h2 class="nummer">2</h2>
         <router-link to="/informatie" class="informatie" exact>
           <button class="resultatenButton">{{ titelPlaats2 }} <br><i>klik voor meer informatie</i></button>
-          <img v-bind:src="fotoPlaats2" >
+          <img class="afbeeldingVakrichting" v-bind:src="fotoPlaats2" >
         </router-link>
       </div>
 
@@ -27,7 +29,7 @@
         <h2 class="nummer">3</h2>
         <router-link to="/informatie" class="informatie" exact>
           <button class="resultatenButton">{{ titelPlaats3 }} <br><i>klik voor meer informatie</i></button>
-          <img v-bind:src="fotoPlaats3" >
+          <img class="afbeeldingVakrichting" v-bind:src="fotoPlaats3" >
         </router-link>
       </div>
   </div>
@@ -39,6 +41,7 @@
       <button class="buttonColumn" type="button" formtarget="_blank" onclick="window.location.href='https://rocmondriaan.nl/alle-opleidingen'">Meld je nu aan</button>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -53,6 +56,9 @@ export default {
 
 
 <style scoped>
+#klikHier{
+  text-decoration: underline;
+}
 .headerTekst{
   width: 100%;
   text-align: center;
@@ -103,7 +109,10 @@ export default {
   font-size: 10px;
   color: white;
 }
-
+.afbeeldingVakrichting
+{
+  border-radius: 5px;
+}
 .container-aanmelden{
   width: 100%;
   display: grid;
@@ -149,9 +158,15 @@ img{
   .container{
     grid-template-columns: minmax(0,1fr);
   }
+  #mainContainer{
+    margin: 10px;
+  }
 }
 
 @media screen and (max-width: 480px){
+  #mainContainer{
+    margin: 10px;
+  }
   .container {
     grid-template-columns: minmax(0, 1fr);
   }

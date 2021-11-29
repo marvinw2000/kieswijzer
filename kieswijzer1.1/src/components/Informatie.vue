@@ -156,6 +156,7 @@ body {
 
 @media screen and (max-width: 768px){
   .container{
+    text-align: center;
     grid-template-columns: minmax(0,1fr);
   }
 
@@ -166,6 +167,7 @@ body {
 
 @media screen and (max-width: 480px){
   .container {
+    text-align: center;
     grid-template-columns: minmax(0, 1fr);
   }
 }
