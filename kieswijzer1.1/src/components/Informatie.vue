@@ -146,7 +146,7 @@ body {
   font-size: 20px;
   color: white;
   text-align: center;
-  background-color: #E20D18;
+  background-color: #E30513;
   border-radius: 5px;
   padding: 5px 10px 5px 10px ;
 
