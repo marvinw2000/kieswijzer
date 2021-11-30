@@ -14,7 +14,7 @@ export default
   data()
   {
     return{
-      logoHeader: require('@/assets/RocMondriaan.jpg')
+      logoHeader: require('@/assets/logoROC.jpg')
     }
   },
   methods: {
@@ -28,8 +28,7 @@ export default
 }
 #logo{}
 #logo img{
-  height: 70%;
-  width: 23%;
+  height: 75px;
   margin: 20px;
 }
 .upper{

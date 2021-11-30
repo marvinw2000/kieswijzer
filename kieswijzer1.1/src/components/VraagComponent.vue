@@ -178,7 +178,7 @@ export default {
 }
 .rood{
   font-size: 50px;
-  background-color: #E20D18;
+  background-color: #E30513;
 }
 .groen{
   font-size: 70px;

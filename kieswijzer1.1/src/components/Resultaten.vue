@@ -123,7 +123,7 @@ export default {
 }
 
 .buttonColumn{
-  background-color: #E20D18;
+  background-color: #E30513;
   color:white;
   font-size: 15px;
   padding: 15px 20px 15px 20px;

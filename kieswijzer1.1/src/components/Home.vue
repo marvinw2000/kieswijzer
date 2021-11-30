@@ -36,7 +36,7 @@ export default {
 }
 .startButton{
   cursor: pointer;
-  background-color: #E20D18;
+  background-color: #E30513;
   color: white;
   font-size: 40px;
   margin-top: 50px;
