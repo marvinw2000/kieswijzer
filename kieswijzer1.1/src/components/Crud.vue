@@ -103,10 +103,10 @@ export default {
 
 <style scoped>
 
-p{margin:10px;}
-form{margin: 10px}
-label{margin: 10px}
-input{margin: 10px}
+p{margin:5px;}
+form{margin: 5px}
+label{margin: 5px}
+input{margin: 5px}
 .rood{
   color: #E30513;
 }
@@ -124,10 +124,6 @@ input{margin: 10px}
   border: #1A61A1 1px solid;
   cursor: pointer;
   box-shadow: 0 3px #999;
-}
-.submitBtnBlauw:active {
-  box-shadow: 0 1px #666;
-  transform: translateY(4px);
 }
 .submitBtnRood{
   padding: 5px;
