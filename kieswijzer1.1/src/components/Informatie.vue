@@ -1,35 +1,38 @@
 <template>
   <div class="container">
     <div class="section">
-      <h1>Meer informatie over de scholen</h1>
+      <h1>Word jij de Mondriaan van...</h1>
+      <p>
+        Hieronder zijn de best passenden drie techniek scholen weegegeven op basis van jouw studiekeuzetest. Lees voor meer informatie een neem contact op voor al je vragen!
+      </p>
       <section class="accordion">
+        <h2 class="nummer">1</h2>
         <input type="checkbox" name="collapse" id="handle1" checked="checked">
         <h2 class="handle">
-         <label for="handle1">Autotechniek en mobilitiet</label>
+         <label for="handle1">{{ titelPlaats1 }}</label>
         </h2>
           <div class="content">
-            <p><strong>Overall Impression:</strong> A pale, bitter, highly attenuated and well carbonated Trappist ale, showing a fruity-spicy Trappist yeast character, a spicy-floral hop profile, and a soft, supportive grainy-sweet malt palate.</p>
-            <p><strong>History:</strong> While Trappist breweries have a tradition of brewing a lower-strength beer as a monk’s daily ration, the bitter, pale beer this style describes is a relatively modern invention reflecting current tastes. Westvleteren first brewed theirs in 1999, but replaced older lower-gravity products.</p>
+            <p>{{ tekstPlaats1 }}</p>
           </div>
       </section>
       <section class="accordion">
+        <h2 class="nummer">2</h2>
         <input type="checkbox" name="collapse2" id="handle2">
         <h2 class="handle">
-        <label for="handle2">Metaal-, elektro en installatietechniek</label>
+        <label for="handle2">{{ titelPlaats2 }}</label>
         </h2>
           <div class="content">
-            <p><strong>Overall Impression:</strong> A deep reddish-copper, moderately strong, malty, complex Trappist ale with rich malty flavors, dark or dried fruit esters, and light alcohol blended together in a malty presentation that still finishes fairly dry.</p>
-            <p><strong>History:</strong> Originated at monasteries in the Middle Ages, and was revived in the mid-1800s after the Napoleonic era.</p>
+            <p>{{ tekstPlaats2 }}</p>
           </div>
       </section>
       <section class="accordion">
+        <h2 class="nummer">3</h2>
         <input type="checkbox" name="collapse2" id="handle3">
         <h2 class="handle">
-        <label for="handle3">ICT</label>
+        <label for="handle3">{{ titelPlaats3 }}</label>
         </h2>
           <div class="content">
-            <p><strong>Overall Impression:</strong> A pale, somewhat spicy, dry, strong Trappist ale with a pleasant rounded malt flavor and firm bitterness. Quite aromatic, with spicy, fruity, and light alcohol notes combining with the supportive clean malt character to produce a surprisingly drinkable beverage considering the high alcohol level.</p>
-            <p><strong>History:</strong> Originally popularized by the Trappist monastery at Westmalle.</p>
+            <p>{{ tekstPlaats3 }}</p>
           </div>
       </section>
     </div>
@@ -40,12 +43,12 @@
 </template>
 
 <script>
+//import schoolData from "../data/schoolData";
+import mixins from "../mixins/mixins";
+
 export default {
   name: "Informatie",
-  data() {
-    return {
-    }
-  },
+  mixins:[mixins]
 
 }
 </script>
@@ -53,8 +56,8 @@ export default {
 <style scoped>
 .container{
   display: grid;
-  grid-template-columns: 45% 50%;
-  margin-top:50px;
+  grid-template-columns: 50% 50%;
+  margin-top:30px;
   margin-left: 30px;
   margin-right: 30px;
 }
@@ -62,7 +65,6 @@ export default {
 .section{
   margin-top: 50px;
 }
-
 
 .accordion > input[type="checkbox"] {
   position: absolute;
@@ -106,17 +108,18 @@ body {
 }
 
 .accordion label {
-  color: #333;
+  color: white;
   cursor: pointer;
   font-weight: normal;
   padding: 15px;
-  background-color: white;
+  background-color: #1a61a1;
   border: 1px solid #00639d;
+  border-radius: 5px;
 }
 
 .accordion label:hover,
 .accordion label:focus {
-  background: white;
+  background: #1a49a1;
 }
 
 .accordion .handle label:before {
@@ -134,15 +137,37 @@ body {
   color:lawngreen;
 }
 
+.aanmeld-blok{
+  text-align: center;
+}
+
+.nummer{
+  width: 15%;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  background-color: #E30513;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px ;
+
+}
+
+
 
 @media screen and (max-width: 768px){
   .container{
+    text-align: center;
     grid-template-columns: minmax(0,1fr);
   }
+
+
+
+
 }
 
 @media screen and (max-width: 480px){
   .container {
+    text-align: center;
     grid-template-columns: minmax(0, 1fr);
   }
 }

@@ -9,7 +9,7 @@ import Login from "../components/Login";
 const routes=[
         {
             path:'/kieswijzer',
-            name:'home',
+            name:'kieswijzer',
             component: Home
         },
         {

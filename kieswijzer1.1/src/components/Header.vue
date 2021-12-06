@@ -4,9 +4,6 @@
       <div id="logo">
         <img  v-bind:src="logoHeader" :alt="logoHeader"/>
       </div>
-      <div class="buttonOpleidingen">
-        <button class="headerButton" type="button">opleidingen</button>
-      </div>
     </div>
   </header>
 </template>
@@ -17,7 +14,7 @@ export default
   data()
   {
     return{
-      logoHeader: require('@/assets/RocMondriaan.jpg')
+      logoHeader: require('@/assets/logoROC.jpg')
     }
   },
   methods: {
@@ -31,15 +28,16 @@ export default
 }
 #logo{}
 #logo img{
-  height: 70%;
-  width: 23%;
+  height: 75px;
   margin: 20px;
 }
 .upper{
   width: 100%;
-  border-bottom: solid #999 1px;
+  border-bottom: 1px solid #D8D8D8;
+  border-inline-width: 30px;
   display: flex;
 }
+
 .buttonOpleidingen{
   margin-left: auto;
 }
