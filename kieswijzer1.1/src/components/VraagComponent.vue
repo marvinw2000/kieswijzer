@@ -10,7 +10,7 @@
       <div id="buttons">
         <div v-on:click="trueGeklikt()" class="button groen">&#10003;</div>
         <div v-on:click="falseGeklikt()" class="button rood">&#9587;</div>
-      </div>
+      </div>git
       <div id="progresionBar">
         <div id="bar">
           <div id="point"></div>
