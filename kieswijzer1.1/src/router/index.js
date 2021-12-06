@@ -3,7 +3,7 @@ import Home from "../components/Home";
 import VraagComponent from "../components/VraagComponent";
 import Resultaten from "../components/Resultaten";
 import Informatie from "../components/Informatie";
-
+import Crud from "../components/Crud";
 
 const routes=[
         {
@@ -25,6 +25,11 @@ const routes=[
             path:'/informatie',
             name:'informatie',
             component: Informatie
+        },
+        {
+            path:'/crud',
+            name:'crud',
+            component: Crud
         },
 ];
 
