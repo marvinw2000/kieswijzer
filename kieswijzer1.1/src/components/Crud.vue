@@ -123,7 +123,6 @@ input{margin: 5px}
   border-radius: 5px;
   border: #1A61A1 1px solid;
   cursor: pointer;
-  box-shadow: 0 3px #999;
 }
 .submitBtnRood{
   padding: 5px;
