@@ -3,6 +3,7 @@ import Home from "../components/Home";
 import VraagComponent from "../components/VraagComponent";
 import Resultaten from "../components/Resultaten";
 import Informatie from "../components/Informatie";
+import Login from "../components/Login";
 
 //de routes worden hier aangegeven
 const routes=[
@@ -26,6 +27,11 @@ const routes=[
             name:'informatie',
             component: Informatie
         },
+        {
+            path:'/login',
+            name:'login',
+            component: Login
+        }
 ];
 
 const router = createRouter({
