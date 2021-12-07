@@ -14,7 +14,9 @@
   </div>
   <div class="container-cancel">
     <div class="grid-item1">
-      <button type="cancelButton" onclick="" class="cancelbtn">Annuleren</button>
+      <router-link to="/kieswijzer" class="kieswijzer" exact>
+        <button type="cancelButton" onclick="" class="cancelbtn"> Annuleren</button>
+      </router-link>
     </div>
     <div class="grid-item2">
       <span class="psw"><a href="#">Wachtwoord vergeten?</a></span>
