@@ -96,8 +96,24 @@
 
 <script>
 export default {
-  name: "Crud"
-
+  name: "Crud",
+  /*
+  beforeCreate() {
+    fetch('http://127.0.0.1:8000/getAllQuestions')
+        .then((response) => {
+          return response.json();
+        })
+        .then((myJson) => {
+          this.vragenData = myJson;
+          console.log(this.vragenData)
+          console.log(this.vragenData[0].vraag)
+        });
+  },
+  data() {
+    return {
+      vragenData: null
+    }
+  }*/
 }
 </script>
 
