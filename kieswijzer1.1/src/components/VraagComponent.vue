@@ -79,7 +79,7 @@ export default {
       document.getElementById("point").style.marginLeft = this.progesie;
 
     },
-    //functie om punten te controleren en verdelen
+    //functcdcie om punten te controleren en verdelen
     controle() {
       //controleert of er nog vragen zijn
       if (this.iteratie < this.lengtenVragen -1)
