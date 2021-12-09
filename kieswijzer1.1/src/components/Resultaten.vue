@@ -1,25 +1,36 @@
 <template>
+<div id="mainContainer">
   <div class="headerTekst">
-    <h1>Best passende techniek scholen</h1>
+    <h1>Word jij de Mondriaan van...</h1>
+    <p>
+      Hieronder zijn de top drie techniek scholen weergegeven op basis van jouw studiekeuzetest.
+      <br><em id="klikHier">Klik op de opleiding voor meer informatie!</em>
+    </p>
   </div>
   <div class="container">
+
       <div class="column">
+        <h2 class="nummer">1</h2>
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">1 - Autotechniek</button>
+          <button class="resultatenButton">{{ titelPlaats1 }} <br><i>klik voor meer informatie</i></button>
+          <img class="afbeeldingVakrichting" v-bind:src="fotoPlaats1" >
         </router-link>
-        <img src="../assets/ICT.jpg" alt="Autotechniek">
       </div>
+
       <div class="column">
+        <h2 class="nummer">2</h2>
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">2 - ICT</button>
+          <button class="resultatenButton">{{ titelPlaats2 }} <br><i>klik voor meer informatie</i></button>
+          <img class="afbeeldingVakrichting" v-bind:src="fotoPlaats2" >
         </router-link>
-        <img src="../assets/ICT.jpg" alt="Elektro">
       </div>
+
       <div class="column">
+        <h2 class="nummer">3</h2>
         <router-link to="/informatie" class="informatie" exact>
-          <button class="resultatenButton">3 - Mobiel</button>
+          <button class="resultatenButton">{{ titelPlaats3 }} <br><i>klik voor meer informatie</i></button>
+          <img class="afbeeldingVakrichting" v-bind:src="fotoPlaats3" >
         </router-link>
-        <img src="../assets/ICT.jpg" alt="ICT" >
       </div>
   </div>
   <div class="container-aanmelden">
@@ -29,18 +40,25 @@
     <div class="footerButton">
       <button class="buttonColumn" type="button" formtarget="_blank" onclick="window.location.href='https://rocmondriaan.nl/alle-opleidingen'">Meld je nu aan</button>
     </div>
-
   </div>
+</div>
 </template>
 
 <script>
+import mixins from "../mixins/mixins";
+
 export default {
-  name: "Resultaten"
+  name: "Resultaten",
+  mixins:[mixins]
 }
+
 </script>
 
-<style scoped>
 
+<style scoped>
+#klikHier{
+  text-decoration: underline;
+}
 .headerTekst{
   width: 100%;
   text-align: center;
@@ -48,10 +66,10 @@ export default {
 }
 
 .container{
-  width: 100%;
   display: grid;
   grid-template-columns: 33% 33% 33% ;
   text-align: center;
+  margin-top: 3%;
 }
 
 .column{
@@ -59,12 +77,21 @@ export default {
   margin-right: 20px;
 }
 
+.nummer{
+  width: 33%;
+  font-size: 20px;
+  color: white;
+  background-color: #E20D18;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px ;
+
+}
+
 .resultatenButton{
   background-color: #1a61a1;
   color:white;
-  font-size: 15px;
+  font-size: 18px;
   padding: 12px 18px 12px 18px;
-  margin-top: 20px;
   margin-right: 35px;
   border: none;
   border-radius: 5px;
@@ -72,12 +99,20 @@ export default {
   width: 100%;
   border-bottom: 3px solid #1a49a1;
   transition: all .2s ease;
+  cursor: pointer;
 }
 
 .resultatenButton:hover{
   background-color: #1a49a1;
 }
-
+.resultatenButton i{
+  font-size: 10px;
+  color: white;
+}
+.afbeeldingVakrichting
+{
+  border-radius: 5px;
+}
 .container-aanmelden{
   width: 100%;
   display: grid;
@@ -88,7 +123,7 @@ export default {
 }
 
 .buttonColumn{
-  background-color: #E20D18;
+  background-color: #E30513;
   color:white;
   font-size: 15px;
   padding: 15px 20px 15px 20px;
@@ -118,13 +153,20 @@ img{
   text-align: left;
 }
 
+
 @media screen and (max-width: 768px){
   .container{
     grid-template-columns: minmax(0,1fr);
   }
+  #mainContainer{
+    margin: 10px;
+  }
 }
 
 @media screen and (max-width: 480px){
+  #mainContainer{
+    margin: 10px;
+  }
   .container {
     grid-template-columns: minmax(0, 1fr);
   }
