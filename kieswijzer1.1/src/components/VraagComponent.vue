@@ -4,8 +4,8 @@
   <div id="midden">
     <div id="containerBinnen">
       <div id="vraag">
-        <h1>Vraag {{id}}:</h1>
-        <p>{{vraag}}</p>
+        <h1>Vraag {{vraagData.id}}:</h1>
+        <p>{{vraagData.vraag}}</p>
       </div>
       <div id="buttons">
         <div v-on:click="trueGeklikt()" class="button groen">&#10003;</div>
@@ -16,7 +16,7 @@
           <div id="point"></div>
         </div>
         <div id="progesieMobile">
-          {{id +` van `+lengtenVragen}}
+          {{vraagData.id +` van `+ vragenData.length}}
         </div>
       </div>
     </div>
@@ -28,26 +28,25 @@
 
 <script>
 
-
-import vragenData from '../data/vragenData'
 import router from "../router";
-//import Resultaten from "./Resultaten";
-//import Informatie from "./Informatie";
 
 export default {
   name: "VraagComponent",
-  data() {
+  beforeCreate() {
+    fetch('http://127.0.0.1:8000/getAllQuestions')
+        .then((response) => {
+          return response.json();
+        })
+        .then((myJson) => {
+          this.vragenData = myJson;
+          console.log(this.vragenData)
+          console.log(this.vragenData[0].id)
+          console.log(this.vragenData[0].vraag)
+        });
+  },
+  data(){
     return{
-      vragenData,
-      id: vragenData.vragen[0].id,
-      vraag: vragenData.vragen[0].vraag,
-      juistenAntwoord: vragenData.vragen[0].juistenAntwoord,
-      puntenIct: vragenData.vragen[0].puntenIct,
-      puntenAenM: vragenData.vragen[0].puntenAenM,
-      puntenTeni: vragenData.vragen[0].puntenTeni,
-      puntenMei: vragenData.vragen[0].puntenMei,
-      puntenBeni: vragenData.vragen[0].puntenBeni,
-      lengtenVragen: vragenData.vragen.length,
+      vragenData: null,
       iteratie:0,
       geklikteButton:true,
       allPoints:[
@@ -64,68 +63,74 @@ export default {
       progesie:""
     }
   },
+  computed:{
+    vraagData(){
+      return{
+        ...this.vragenData[this.iteratie]
+      }
+    }
+  },
   methods:{
     //functie om naar de volgende vraag te gaan
     next(){
+      console.log('next')
       //doet vraag + 1
       this.iteratie++
-      //het nummer van de vraag word veranderd
-      this.id = vragenData.vragen[this.iteratie].id
-      //de titel word veranderd
-      this.vraag = vragenData.vragen[this.iteratie].vraag
-
       this.aantalProgesie += 10.5
       this.progesie = this.aantalProgesie + 'px'
       document.getElementById("point").style.marginLeft = this.progesie;
-
     },
     //functcdcie om punten te controleren en verdelen
     controle() {
+      console.log('controle')
+
       //controleert of er nog vragen zijn
-      if (this.iteratie < this.lengtenVragen -1)
-      {//controleert of de juiste button is geklikt
-        if(this.geklikteButton === vragenData.vragen[this.iteratie].juistenAntwoord){
-          //punten worden verdeeld
-          this.allPoints[0].points += vragenData.vragen[this.iteratie].puntenIct
-          this.allPoints[1].points += vragenData.vragen[this.iteratie].puntenAenM
-          this.allPoints[2].points += vragenData.vragen[this.iteratie].puntenTeni
-          this.allPoints[3].points += vragenData.vragen[this.iteratie].puntenMei
-          this.allPoints[4].points += vragenData.vragen[this.iteratie].puntenBeni
-        }
-        //functie next word aangeroepen
-        this.next()
+      if (this.iteratie < this.vragenData.length -1) {
+        //controleert of de juiste button is geklikt
+         if(this.geklikteButton === this.vraagData.juisteAntwoord){
+           //punten worden verdeeld
+           this.allPoints[0].points += this.vraagData.puntenIct
+           this.allPoints[1].points += this.vraagData.puntenAenM
+           this.allPoints[2].points += this.vraagData.puntenTenI
+           this.allPoints[3].points += this.vraagData.puntenMei
+           this.allPoints[4].points += this.vraagData.puntenBenI
+         }
+         console.log(this.allPoints)
+         //functie next word aangeroepen
+         this.next()
       }
       else{
-        //allen vragen zijn beantwoord
-        //sorteert de lijst met punten
-        this.allPoints.sort((a, b) => {
-          return a.points - b.points
-        })
-        // nummer 4 is de grootste
-        this.nummer1 = this.allPoints[4].id
-        this.nummer2 = this.allPoints[3].id
-        this.nummer3 = this.allPoints[2].id
+         //allen vragen zijn beantwoord
+         //sorteert de lijst met punten
+         this.allPoints.sort((a, b) => {return a.points - b.points})
+         // nummer 4 is de grootste
+         this.nummer1 = this.allPoints[4].id
+         this.nummer2 = this.allPoints[3].id
+         this.nummer3 = this.allPoints[2].id
 
-        //de top 3 word opgeslagen in de html session
-        sessionStorage.setItem("n1",this.nummer1)
-        sessionStorage.setItem("n2",this.nummer2)
-        sessionStorage.setItem("n3",this.nummer3)
-        router.push('resultaten')//hiermee ga je naar de resultaaten pagina
+         //de top 3 word opgeslagen in de html session
+         sessionStorage.setItem("n1",this.nummer1)
+         sessionStorage.setItem("n2",this.nummer2)
+         sessionStorage.setItem("n3",this.nummer3)
+         router.push('resultaten')//hiermee ga je naar de resultaaten pagina
       }
+
     },
     //button voor als je op vals geklikt hebt
     falseGeklikt(){
+      console.log('falseGeklikt')
       //staat geklikteButton veranderd
       this.geklikteButton = false
-      //roept controle functie aan
+      // roept controle functie aan
       this.controle()
     },
     //button voor als je op true geklikt hebt
     trueGeklikt(){
+      console.log('trueGeklikt')
       //staat geklikteButton veranderd
-      this.geklikteButton = true
+       this.geklikteButton = true
       //roept controle functie aan
-      this.controle()
+       this.controle()
     }
   }
 }

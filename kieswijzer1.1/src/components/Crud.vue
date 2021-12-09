@@ -111,33 +111,9 @@ export default {
   },
   data(){
     return{
-      vragenData: null,
-      form:{
-        vraag: null,
-        juisteAntwoord: null,
-        puntenIct: null,
-        puntenAenM: null,
-        puntenBenI: null,
-        puntenMei: null,
-        puntenTenI: null
-      },
+      vragenData: null
     }
   },
-  methods:{
-    submitNvraag(evt){
-      evt.preventDefault();
-      fetch('http://127.0.0.1:8000/createQuestion', {
-        body: JSON.stringify(this.form),
-        method: "POST"
-      }).then((response) => {
-        return response.json();
-      }).then((myJson) => {
-        console.log(myJson);
-      });
-
-      
-    }
-  }
 }
 </script>
 
