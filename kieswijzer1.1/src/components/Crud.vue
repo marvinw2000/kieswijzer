@@ -1,97 +1,113 @@
 <template>
-<div id="container">
-  <div id="links"></div>
-  <div id="midden">
-    <h1 class="titel">admin functionaliteiten</h1>
-    <div id="containerMidden">
-      <div id="delete" class="card">
-        <h2 class="rood">delete</h2>
-        <p class="rood important">Kies de vraag die je wilt verwijderen, en klik dan op submit.</p>
-        <form action="">
-          <label class="rood" for="deleteVragen">kies een vraag:</label>
-          <select class="rood" name="deleteVragen" id="deleteVragen">
-            <option value="vraag1">vraag1</option>
-            <option value="vraag2">vraag2</option>
-            <option value="vraag3">vraag3</option>
-            <option value="vraag4">vraag4</option>
-          </select><br>
-          <input class="rood submitBtnRood" type="submit" value="Submit">
-        </form>
-      </div>
-      <div id="create" class="card">
-        <h2>create</h2>
-        <p class="important">Vul alle velden in om een nieuwe vraag te maken.</p>
-        <form action="">
-          <label for="vraaginput">Vraag:</label>
-          <input type="text" id="vraaginput" name="vraagInput" value="dit is mijn vraag"><br>
-
-          <label for="trueOrFalse">Is de vraag Waar of niet waar:</label>
-          <select name="trueOrFalse" id="trueOrFalse">
-            <option value="true">waar</option>
-            <option value="false">niet waar</option>
-          </select><br>
-
-          <label for="puntenIct">Hoeveel punten krijgt ict:</label>
-          <input type="number" id="puntenIct" name="puntenIct" min="0" max="10" value="0"><br>
-
-          <label for="puntenAenM">Hoeveel punten krijgt AenM:</label>
-          <input type="number" id="puntenAenM" name="puntenAenM" min="0" max="10" value="0"><br>
-
-          <label for="puntenTenI">Hoeveel punten krijgt TenI:</label>
-          <input type="number" id="puntenTenI" name="puntenTenI" min="0" max="10" value="0"><br>
-
-          <label for="puntenMei">Hoeveel punten krijgt Mei:</label>
-          <input type="number" id="puntenMei" name="puntenMei" min="0" max="10" value="0"><br>
-
-          <label for="puntenBenI">Hoeveel punten krijgt BenI:</label>
-          <input type="number" id="puntenBenI" name="puntenBenI" min="0" max="10" value="0"><br>
-
-          <input class="submitBtnBlauw" type="submit" value="Submit">
-        </form>
-      </div>
-      <div id="update" class="card">
-        <h2 class="geel">update</h2>
-        <p class="geel important" >Kies de vraag en vul de velden in.</p>
-        <form action="">
-          <label class="geel" for="updateVragen">kies een vraag:</label>
-          <select class="geel" name="updateVragen" id="updateVragen">
-            <option value="vraag1">vraag1</option>
-            <option value="vraag2">vraag2</option>
-            <option value="vraag3">vraag3</option>
-            <option value="vraag4">vraag4</option>
-          </select><br>
-
-          <label class="geel" for="vraaginput">Vraag:</label>
-          <input class="geel" type="text" id="vraaginput" name="vraagInput" value="dit is mijn vraag"><br>
-
-          <label class="geel" for="trueOrFalse">Is de vraag Waar of niet waar:</label>
-          <select class="geel" name="trueOrFalse" id="trueOrFalse">
-            <option value="true">waar</option>
-            <option value="false">niet waar</option>
-          </select><br>
-
-          <label class="geel" for="puntenIct">Hoeveel punten krijgt ict:</label>
-          <input class="geel" type="number" id="puntenIct" name="puntenIct" min="0" max="10" value="0"><br>
-
-          <label class="geel" for="puntenAenM">Hoeveel punten krijgt AenM:</label>
-          <input class="geel" type="number" id="puntenAenM" name="puntenAenM" min="0" max="10" value="0"><br>
-
-          <label class="geel" for="puntenTenI">Hoeveel punten krijgt TenI:</label>
-          <input class="geel" type="number" id="puntenTenI" name="puntenTenI" min="0" max="10" value="0"><br>
-
-          <label class="geel" for="puntenMei">Hoeveel punten krijgt Mei:</label>
-          <input class="geel" type="number" id="puntenMei" name="puntenMei" min="0" max="10" value="0"><br>
-
-          <label class="geel" for="puntenBenI">Hoeveel punten krijgt BenI:</label>
-          <input class="geel" type="number" id="puntenBenI" name="puntenBenI" min="0" max="10" value="0"><br>
-
-          <input class="geel submitBtnGeel" type="submit" value="Submit">
-        </form>
+  <div class="container">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-8"><h2>Customer <b>Details</b></h2></div>
+            <div class="col-sm-4">
+              <div class="search-box">
+                <i class="material-icons">&#xE8B6;</i>
+                <input type="text" class="form-control" placeholder="Search&hellip;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Name <i class="fa fa-sort"></i></th>
+            <th>Address</th>
+            <th>City <i class="fa fa-sort"></i></th>
+            <th>Pin Code</th>
+            <th>Country <i class="fa fa-sort"></i></th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>1</td>
+            <td>Thomas Hardy</td>
+            <td>89 Chiaroscuro Rd.</td>
+            <td>Portland</td>
+            <td>97219</td>
+            <td>USA</td>
+            <td>
+              <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+              <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+              <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Maria Anders</td>
+            <td>Obere Str. 57</td>
+            <td>Berlin</td>
+            <td>12209</td>
+            <td>Germany</td>
+            <td>
+              <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+              <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+              <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Fran Wilson</td>
+            <td>C/ Araquil, 67</td>
+            <td>Madrid</td>
+            <td>28023</td>
+            <td>Spain</td>
+            <td>
+              <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+              <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+              <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Dominique Perrier</td>
+            <td>25, rue Lauriston</td>
+            <td>Paris</td>
+            <td>75016</td>
+            <td>France</td>
+            <td>
+              <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+              <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+              <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Martin Blank</td>
+            <td>Via Monte Bianco 34</td>
+            <td>Turin</td>
+            <td>10100</td>
+            <td>Italy</td>
+            <td>
+              <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+              <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+              <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="clearfix">
+          <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+          <ul class="pagination">
+            <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+            <li class="page-item"><a href="#" class="page-link">1</a></li>
+            <li class="page-item"><a href="#" class="page-link">2</a></li>
+            <li class="page-item active"><a href="#" class="page-link">3</a></li>
+            <li class="page-item"><a href="#" class="page-link">4</a></li>
+            <li class="page-item"><a href="#" class="page-link">5</a></li>
+            <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-  <div id="rechts"></div>
-</div>
 </template>
 
 <script>
@@ -142,84 +158,118 @@ export default {
 </script>
 
 <style scoped>
-
-p{margin:5px;}
-form{margin: 5px}
-label{margin: 5px}
-input{margin: 5px}
-.rood{
-  color: #E30513;
+body {
+  color: #566787;
+  background: #f5f5f5;
+  font-family: 'Roboto', sans-serif;
 }
-.geel{
-  color: #FFDA05;
+.table-responsive {
+  margin: 30px 0;
 }
-.important{
-  text-decoration: underline;
+.table-wrapper {
+  min-width: 1000px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
 }
-.titel{font-size: 2em}
-.submitBtnBlauw{
-  padding: 5px;
-  background-color: #fff;
-  border-radius: 5px;
-  border: #1A61A1 1px solid;
+.table-title {
+  padding-bottom: 10px;
+  margin: 0 0 10px;
+}
+.table-title h2 {
+  margin: 8px 0 0;
+  font-size: 22px;
+}
+.search-box {
+  position: relative;
+  float: right;
+}
+.search-box input {
+  height: 34px;
+  border-radius: 20px;
+  padding-left: 35px;
+  border-color: #ddd;
+  box-shadow: none;
+}
+.search-box input:focus {
+  border-color: #3FBAE4;
+}
+.search-box i {
+  color: #a0a5b1;
+  position: absolute;
+  font-size: 19px;
+  top: 8px;
+  left: 10px;
+}
+table.table tr th, table.table tr td {
+  border-color: #e9e9e9;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #fcfcfc;
+}
+table.table-striped.table-hover tbody tr:hover {
+  background: #f5f5f5;
+}
+table.table th i {
+  font-size: 13px;
+  margin: 0 5px;
   cursor: pointer;
 }
-.submitBtnRood{
-  padding: 5px;
-  background-color: #fff;
-  border-radius: 5px;
-  border: #B50811 1px solid;
+table.table td:last-child {
+  width: 130px;
 }
-.submitBtnGeel{
-  padding: 5px;
-  background-color: #fff;
-  border-radius: 5px;
-  border: #FFDA05 1px solid;
+table.table td a {
+  color: #a0a5b1;
+  display: inline-block;
+  margin: 0 5px;
 }
-#container{
+table.table td a.view {
+  color: #03A9F4;
+}
+table.table td a.edit {
+  color: #FFC107;
+}
+table.table td a.delete {
+  color: #E34724;
+}
+table.table td i {
+  font-size: 19px;
+}
+.pagination {
+  float: right;
+  margin: 0 0 5px;
+}
+.pagination li a {
+  border: none;
+  font-size: 95%;
+  width: 30px;
+  height: 30px;
+  color: #999;
+  margin: 0 2px;
+  line-height: 30px;
+  border-radius: 30px !important;
   text-align: center;
-  display: flex;
+  padding: 0;
 }
-#links{
-  width: 2.5%;
-  height: 800px;
+.pagination li a:hover {
+  color: #666;
 }
-#midden{
-  width: 95%;
-  height: 800px;
+.pagination li.active a {
+  background: #03A9F4;
 }
-#containerMidden{
-  display: flex;
-  flex-direction: column;
-  align-items: normal;
+.pagination li.active a:hover {
+  background: #0397d6;
 }
-.card{
-  margin: 5px;
+.pagination li.disabled i {
+  color: #ccc;
 }
-#delete{
-  border: solid 1px #E30513;
-  border-radius: 15px;
-  text-decoration-color: #E30513;
+.pagination li i {
+  font-size: 16px;
+  padding-top: 6px
 }
-#create{
-  border: solid 1px #00639D;
-  border-radius: 15px;
-}
-#update{
-  border: solid 1px #FFDA05;
-  border-radius: 15px;
-}
-
-#rechts{
-  height: 800px;
-  width: 2.5%;
-}
-@media (min-width: 800px) {
-  .titel{font-size: 2.5em}
-  #containerMidden{
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: self-start;
-  }
+.hint-text {
+  float: left;
+  margin-top: 6px;
+  font-size: 95%;
 }
 </style>
