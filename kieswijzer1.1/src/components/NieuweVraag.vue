@@ -4,31 +4,31 @@
       <form>
         <div class="form-group">
           <label>Vraag</label>
-          <input type="text" v-model="form.vraag" class="form-control" placeholder="Plaats uw vraag">
+          <input type="text" v-model="form.vraag" required class="form-control" placeholder="Plaats uw vraag">
         </div>
         <div class="form-group">
           <label>Juiste antwoord</label>
-          <input type="number" v-model="form.juisteAntwoord" class="form-control" placeholder="true = 1 & false = 0">
+          <input type="number" v-model="form.juisteAntwoord" min="0" max="1" required class="form-control" placeholder="true = 1 & false = 0">
         </div>
         <div class="form-group">
           <label>Punten ICT</label>
-          <input type="number" v-model="form.puntenAenM" class="form-control" placeholder="aantal punten">
+          <input type="number" v-model="form.puntenIct" min="0" max="3" required class="form-control" placeholder="aantal punten">
         </div>
         <div class="form-group">
           <label>Punten AenM</label>
-          <input type="number" v-model="form.puntenAenM" class="form-control" placeholder="aantal punten">
+          <input type="number" v-model="form.puntenAenM" min="0" max="3" required class="form-control" placeholder="aantal punten">
         </div>
         <div class="form-group">
           <label>Punten BenI</label>
-          <input type="number" v-model="form.puntenBenI" class="form-control" placeholder="aantal punten">
+          <input type="number" v-model="form.puntenBenI" min="0" max="3" required class="form-control" placeholder="aantal punten">
         </div>
         <div class="form-group">
           <label>Punten MeI</label>
-          <input type="number" v-model="form.puntenMei" class="form-control" placeholder="aantal punten">
+          <input type="number" v-model="form.puntenMei" min="0" max="3" required class="form-control" placeholder="aantal punten">
         </div>
         <div class="form-group">
           <label>Punten TenI</label>
-          <input type="number" v-model="form.puntenTenI" class="form-control" placeholder="aantal punten">
+          <input type="number" v-model="form.puntenTenI" min="0" max="3" required class="form-control" placeholder="aantal punten">
         </div>
         <button type="submit" v-on:click="toevoegen()" class="buttonToevoegen">Toevoegen</button>
       </form>
