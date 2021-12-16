@@ -23,12 +23,13 @@
           <tbody>
           <tr v-for="(vraag, index) in vragenData" :key="index">
             <td>{{ vraag.id }}</td>
-            <td>{{ vraag.juistenAntwoord }}</td>
+            <td>{{ vraag.vraag }}</td>
+            <td>{{ vraag.juisteAntwoord }}</td>
             <td>{{ vraag.puntenIct }}</td>
             <td>{{ vraag.puntenAenM }}</td>
-            <td>{{ vraag.puntenBeni }}</td>
+            <td>{{ vraag.puntenBenI }}</td>
             <td>{{ vraag.puntenMei }}</td>
-            <td>{{ vraag.puntenTeni }}</td>
+            <td>{{ vraag.puntenTenI }}</td>
             <td>
               <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
               <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
@@ -56,11 +57,13 @@
 </template>
 
 <script>
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 export default {
   name: "Crud",
 
   beforeCreate() {
-    fetch('http://127.0.0.1:8000/getAllQuestions')
+    fetch('https://127.0.0.1:8000/getAllQuestions')
         .then((response) => {
           return response.json();
         })
