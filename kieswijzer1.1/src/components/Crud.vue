@@ -81,9 +81,11 @@ export default {
   },
   methods:{
     deleteVraag(id){
-      fetch(`https://127.0.0.1:8000/deleteQuestion/${id}`)
-      alert(`vraag ${id} word verwijdert`)
-      this.$router.go('crud')
+
+      if (confirm(`weet je zeker dat je vraag ${id} wilt verwijderen`)){
+        fetch(`https://127.0.0.1:8000/deleteQuestion/${id}`)
+        this.$router.go('crud')
+      }
     }
   }
 }
