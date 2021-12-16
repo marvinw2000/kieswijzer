@@ -35,8 +35,7 @@
             <td>{{ vraag.puntenTenI }}</td>
             <td>
               <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-              <a href="#" class="delete .text-danger" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-
+              <a href="#" v-on:click="deleteVraag(vraag.id)" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons ">&#xE872;</i></a>
             </td>
           </tr>
 
@@ -60,6 +59,7 @@
 </template>
 
 <script>
+
 export default {
   name: "Crud",
 
@@ -79,6 +79,15 @@ export default {
       vragenData: null
     }
   },
+  methods:{
+    deleteVraag(id){
+
+      if (confirm(`weet je zeker dat je vraag ${id} wilt verwijderen`)){
+        fetch(`https://127.0.0.1:8000/deleteQuestion/${id}`)
+        this.$router.go('crud')
+      }
+    }
+  }
 }
 </script>
 
