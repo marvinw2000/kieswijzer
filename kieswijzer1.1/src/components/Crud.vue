@@ -38,21 +38,8 @@
               <a href="#" v-on:click="deleteVraag(vraag.id)" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons ">&#xE872;</i></a>
             </td>
           </tr>
-
           </tbody>
         </table>
-<!--        <div class="clearfix">-->
-<!--          <div class="hint-text">Pagina <b>5</b> van de <b>25</b></div>-->
-<!--          <ul class="pagination">-->
-<!--            <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>-->
-<!--            <li class="page-item"><a href="#" class="page-link">1</a></li>-->
-<!--            <li class="page-item"><a href="#" class="page-link">2</a></li>-->
-<!--            <li class="page-item active"><a href="#" class="page-link">3</a></li>-->
-<!--            <li class="page-item"><a href="#" class="page-link">4</a></li>-->
-<!--            <li class="page-item"><a href="#" class="page-link">5</a></li>-->
-<!--            <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>-->
-<!--          </ul>-->
-<!--        </div>-->
       </div>
     </div>
   </div>
@@ -83,7 +70,7 @@ export default {
     deleteVraag(id){
 
       if (confirm(`weet je zeker dat je vraag ${id} wilt verwijderen`)){
-        fetch(`http://localhost:8000/deleteQuestion/${id}`)
+        fetch(`http://127.0.0.1:8000/deleteQuestion/${id}`)
         this.$router.go('crud')
       }
     }
