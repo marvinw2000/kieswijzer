@@ -83,7 +83,7 @@ export default {
     deleteVraag(id){
 
       if (confirm(`weet je zeker dat je vraag ${id} wilt verwijderen`)){
-        fetch(`https://127.0.0.1:8000/deleteQuestion/${id}`)
+        fetch(`http://localhost:8000/deleteQuestion/${id}`)
         this.$router.go('crud')
       }
     }
