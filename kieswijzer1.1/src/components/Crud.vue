@@ -33,7 +33,7 @@
             <td>
               <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
               <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-              <a href="#" v-on:click="deleteVraag" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons ">&#xE872;</i></a>
+              <a href="#" v-on:click="deleteVraag(vraag.id)" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons ">&#xE872;</i></a>
             </td>
           </tr>
 
@@ -59,6 +59,7 @@
 <script>
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 export default {
   name: "Crud",
 
@@ -79,9 +80,10 @@ export default {
     }
   },
   methods:{
-    deleteVraag(){
-      alert("vraag word gedelete")
-      fetch('')
+    deleteVraag(id){
+      fetch(`https://127.0.0.1:8000/deleteQuestion/${id}`)
+      alert(`vraag ${id} word verwijdert`)
+      this.$router.go('crud')
     }
   }
 }
