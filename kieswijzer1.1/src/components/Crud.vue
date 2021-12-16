@@ -4,7 +4,10 @@
       <div class="table-wrapper">
         <div class="table-title">
           <div class="row">
-            <div class="col-sm-8"><h2>Beheerders <b>dashboard</b></h2></div>
+            <div class="col-sm-10"><h2>Beheerders <b>dashboard</b></h2></div>
+            <router-link class="col-sm-2" to="nieuw" exact>
+             <div ><button class="buttonToevoegen">Vraag toevoegen</button></div>
+            </router-link>
           </div>
         </div>
         <table class="table table-striped table-hover table-bordered">
@@ -31,9 +34,9 @@
             <td>{{ vraag.puntenMei }}</td>
             <td>{{ vraag.puntenTenI }}</td>
             <td>
-              <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
               <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-              <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+              <a href="#" class="delete .text-danger" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+
             </td>
           </tr>
 
@@ -57,13 +60,11 @@
 </template>
 
 <script>
-import "bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 export default {
   name: "Crud",
 
   beforeCreate() {
-    fetch('https://127.0.0.1:8000/getAllQuestions')
+    fetch('http://127.0.0.1:8000/getAllQuestions')
         .then((response) => {
           return response.json();
         })
@@ -147,14 +148,12 @@ table.table td a {
   display: inline-block;
   margin: 0 5px;
 }
-table.table td a.view {
-  color: #03A9F4;
-}
+
 table.table td a.edit {
   color: #FFC107;
 }
 table.table td a.delete {
-  color: #E34724;
+  color: red;
 }
 table.table td i {
   font-size: 19px;
@@ -191,9 +190,15 @@ table.table td i {
   font-size: 16px;
   padding-top: 6px
 }
-.hint-text {
-  float: left;
-  margin-top: 6px;
-  font-size: 95%;
+.buttonToevoegen{
+  background-color: #E30513;
+  color:white;
+  font-size: 15px;
+  padding: 15px 20px 15px 20px;
+  border: none;
+  border-radius: 5px;
+  border-bottom: 3px solid #B50811;
+  transition: all .2s ease;
 }
+
 </style>

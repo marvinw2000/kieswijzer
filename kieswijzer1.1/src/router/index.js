@@ -5,6 +5,8 @@ import Resultaten from "../components/Resultaten";
 import Informatie from "../components/Informatie";
 import Crud from "../components/Crud";
 import Login from "../components/Login";
+import NieuweVraag from "../components/NieuweVraag";
+
 
 const routes=[
     {
@@ -37,6 +39,11 @@ const routes=[
         name:'login',
         component: Login
     },
+    {
+        path:'/nieuw',
+        name:'nieuw',
+        component: NieuweVraag
+    }
 ];
 
 const router = createRouter({
