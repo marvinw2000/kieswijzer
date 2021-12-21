@@ -34,7 +34,9 @@
             <td>{{ vraag.puntenMei }}</td>
             <td>{{ vraag.puntenTenI }}</td>
             <td>
-              <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+              <router-link to="update">
+                <a href="#" v-show="updateVraag" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+              </router-link>
               <a href="#" v-on:click="deleteVraag(vraag.id)" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons ">&#xE872;</i></a>
             </td>
           </tr>
@@ -73,6 +75,11 @@ export default {
         fetch(`http://127.0.0.1:8000/deleteQuestion/${id}`)
         this.$router.go('crud')
       }
+    },
+
+    updateVraag(id){
+      fetch(`http://127.0.0.1:8000/updateQuestion/${id}`)
+      this.$router.go('crud')
     }
   }
 }
