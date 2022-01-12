@@ -54,16 +54,13 @@ export default {
   },
   methods:{
     toevoegen(){
-      fetch('http://localhost:8000/createQuestion', {
+      fetch('https://localhost:8000/createQuestion', {
         body: JSON.stringify(this.form),
         method: "POST"
       })
           .then((response) => {
             return response.json();
           })
-          .then((myJson) => {
-            console.log(myJson);
-          });
       this.$router.push("/crud")
     }
   }

@@ -26,17 +26,17 @@
           <tbody>
           <tr v-for="(vraag, index) in vragenData" :key="index">
             <td>{{ vraag.id }}</td>
-            <td>{{ vraag.vraag }}</td>
-            <td>{{ vraag.juisteAntwoord }}</td>
-            <td>{{ vraag.puntenIct }}</td>
-            <td>{{ vraag.puntenAenM }}</td>
-            <td>{{ vraag.puntenBenI }}</td>
-            <td>{{ vraag.puntenMei }}</td>
-            <td>{{ vraag.puntenTenI }}</td>
+            <td><div contenteditable :class="[vraag.id]" >{{ vraag.vraag }}</div></td>
+            <td><div contenteditable >{{ vraag.juisteAntwoord }}</div></td>
+            <td><div contenteditable >{{ vraag.puntenIct }}</div></td>
+            <td><div contenteditable >{{ vraag.puntenAenM }}</div></td>
+            <td><div contenteditable >{{ vraag.puntenBenI }}</div></td>
+            <td><div contenteditable >{{ vraag.puntenMei }}</div></td>
+            <td><div contenteditable >{{ vraag.puntenTenI }}</div></td>
             <td>
-              <router-link to="update">
-                <a href="#" v-show="updateVraag" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-              </router-link>
+<!--          <router-link to="update">-->
+              <a v-on:click="updateAction(vraag.id)" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+<!--          </router-link>-->
               <a href="#" v-on:click="deleteVraag(vraag.id)" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons ">&#xE872;</i></a>
             </td>
           </tr>
@@ -53,33 +53,37 @@ export default {
   name: "Crud",
 
   beforeCreate() {
-    fetch('http://127.0.0.1:8000/getAllQuestions')
+    fetch('https://127.0.0.1:8000/getAllQuestions')
         .then((response) => {
           return response.json();
         })
         .then((myJson) => {
           this.vragenData = myJson;
-          console.log(this.vragenData)
-          console.log(this.vragenData[0].vraag)
+          //console.log(this.vragenData)
+          //console.log(this.vragenData[0].vraag)
         });
   },
   data(){
     return{
-      vragenData: null
+      vragenData: null,
+
+
     }
   },
   methods:{
     deleteVraag(id){
-
       if (confirm(`weet je zeker dat je vraag ${id} wilt verwijderen`)){
-        fetch(`http://127.0.0.1:8000/deleteQuestion/${id}`)
+        fetch(`https://127.0.0.1:8000/deleteQuestion/${id}`)
         this.$router.go('crud')
       }
     },
-
-    updateVraag(id){
-      fetch(`http://127.0.0.1:8000/updateQuestion/${id}`)
-      this.$router.go('crud')
+    updateAction(id){
+      //let vraagNaam1 = document.getElementsByClassName(`vraagNaam ${id}`)
+      let vraagNaam2 = document.querySelectorAll(id)
+      // console.log(vraagNaam1.textcontent)
+      console.log(vraagNaam2.textcontent)
+      //fetch(`https://127.0.0.1:8000/updateQuestion/${id}`)
+      //this.$router.go('crud')
     }
   }
 }
@@ -203,5 +207,4 @@ table.table td i {
   border-bottom: 3px solid #B50811;
   transition: all .2s ease;
 }
-
 </style>

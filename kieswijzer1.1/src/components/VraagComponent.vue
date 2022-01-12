@@ -33,15 +33,15 @@ import router from "../router";
 export default {
   name: "VraagComponent",
   beforeCreate() {
-    fetch('http://127.0.0.1:8000/getAllQuestions')
+    fetch('https://127.0.0.1:8000/getAllQuestions')
         .then((response) => {
           return response.json();
         })
         .then((myJson) => {
           this.vragenData = myJson;
-          console.log(this.vragenData)
-          console.log(this.vragenData[0].id)
-          console.log(this.vragenData[0].vraag)
+          //console.log(this.vragenData)
+          //console.log(this.vragenData[0].id)
+          //console.log(this.vragenData[0].vraag)
         });
   },
   data(){
@@ -73,7 +73,7 @@ export default {
   methods:{
     //functie om naar de volgende vraag te gaan
     next(){
-      console.log('next')
+      //console.log('next')
       //doet vraag + 1
       this.iteratie++
       this.aantalProgesie += 10.5
@@ -82,8 +82,7 @@ export default {
     },
     //functcdcie om punten te controleren en verdelen
     controle() {
-      console.log('controle')
-
+      //console.log('controle')
       //controleert of er nog vragen zijn
       if (this.iteratie < this.vragenData.length -1) {
         //controleert of de juiste button is geklikt
@@ -95,7 +94,7 @@ export default {
            this.allPoints[3].points += this.vraagData.puntenMei
            this.allPoints[4].points += this.vraagData.puntenBenI
          }
-         console.log(this.allPoints)
+         //console.log(this.allPoints)
          //functie next word aangeroepen
          this.next()
       }
@@ -118,7 +117,7 @@ export default {
     },
     //button voor als je op vals geklikt hebt
     falseGeklikt(){
-      console.log('falseGeklikt')
+      //console.log('falseGeklikt')
       //staat geklikteButton veranderd
       this.geklikteButton = false
       // roept controle functie aan

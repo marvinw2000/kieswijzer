@@ -45,14 +45,14 @@ export default {
   name: "Crud",
 
   beforeCreate() {
-    fetch('http://127.0.0.1:8000/getAllQuestions')
+    fetch('https://127.0.0.1:8000/getAllQuestions')
         .then((response) => {
           return response.json();
         })
         .then((myJson) => {
           this.vragenData = myJson;
-          console.log(this.vragenData)
-          console.log(this.vragenData[0].vraag)
+          //console.log(this.vragenData)
+          //console.log(this.vragenData[0].vraag)
         });
   },
   data(){
@@ -60,12 +60,12 @@ export default {
       vragenData: null
     }
   },
-  methods:{
-     updateVraag(id){
-      fetch(`http://127.0.0.1:8000/updateQuestion/${id}`)
-      //this.$router.go('crud')
-    }
-  }
+  // methods:{
+  //    updateVraag(id){
+  //     fetch(`https://127.0.0.1:8000/updateQuestion/${id}`)
+  //     //this.$router.go('crud')
+  //   }
+  // }
 }
 </script>
 
