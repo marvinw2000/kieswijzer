@@ -71,7 +71,7 @@ export default {
   name: "Crud",
 
   beforeCreate() {
-    fetch('http://127.0.0.1:8000/getAllQuestions')
+    fetch('https://127.0.0.1:8000/getAllQuestions')
         .then((response) => {
           return response.json();
         })
@@ -134,7 +134,7 @@ export default {
         "currentPointsMei": currentPointsMei.textContent,
         "currentPointsTenI": currentPointsTenI.textContent
       }
-      fetch(`http://127.0.0.1:8000/updateQuestion/${id}`, {
+      fetch(`https://127.0.0.1:8000/updateQuestion/${id}`, {
         body: JSON.stringify(json),
         method: "POST"
       }).then((response) =>{
@@ -144,7 +144,7 @@ export default {
       .then((myJson)=>{
         console.log(myJson);
       })
-      // this.$router.go('crud')
+      this.$router.go('crud')
     }
   }
 }
