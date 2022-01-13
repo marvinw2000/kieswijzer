@@ -103,10 +103,10 @@ export default {
       let trimedAnswer = currentCorectAnswer.textContent.toLowerCase().trim()
       let corectAnswer = 0
       if (trimedAnswer === 'true'){
-        corectAnswer = 1
+        corectAnswer = true
       }
       if (trimedAnswer === 'false'){
-        corectAnswer = 0
+        corectAnswer = false
       }
       console.log(corectAnswer)
 
@@ -144,7 +144,7 @@ export default {
       .then((myJson)=>{
         console.log(myJson);
       })
-      this.$router.go('crud')
+      //this.$router.go('crud')
     }
   }
 }
