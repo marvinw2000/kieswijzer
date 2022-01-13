@@ -13,12 +13,12 @@
       </label>
   </div>
   <div class="container-cancel">
-    <div class="grid-item1">
+    <div class="annuleren">
       <router-link to="/kieswijzer" class="kieswijzer" exact>
         <button type="cancelButton" onclick="" class="cancelbtn"> Annuleren</button>
       </router-link>
     </div>
-    <div class="grid-item2">
+    <div class="wachtwoord-vergeten">
       <span class="psw"><a href="#">Wachtwoord vergeten?</a></span>
     </div>
   </div>
@@ -38,18 +38,15 @@ export default {
 
 .container-afbeelding{
   display: grid;
-  width: 100%;
   justify-content: center;
   margin: 30px 0px 30px 0px;
 }
 
 .container{
   display: grid;
-  margin: 20px 200px 20px 200px;
 }
 
 input[type=text], input[type=password] {
-  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -74,8 +71,7 @@ button:hover {
 .container-cancel{
   display: grid;
   grid-template-columns: 200px 200px;
-  margin: 20px 200px 20px 200px;
-  width: 100%;
+  margin: 20px 120px 20px 120px;
 }
 
 .cancelbtn{
@@ -84,26 +80,37 @@ button:hover {
   padding: 10px 5px 10px 5px;
 }
 
-.grid-item2{
+.wachtwoord-vergeten{
   text-align: right;
   margin-top: 15px;
 }
 
 @media screen and (max-width: 768px){
-  .container{
-    margin: 20px 50px 20px 50px;
+  .container {
+    justify-content: center;
   }
   .container-cancel{
-    margin: 20px 50px 20px 50px;
+    grid-template-columns: 100%;
+  }
+
+  .wachtwoord-vergeten{
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 480px){
   .container {
-    margin: 20px 50px 20px 50px;
+    margin: 20px 20px 20px 20px;
+    justify-content: center;
   }
+
   .container-cancel{
-    margin: 20px 50px 20px 50px;
+    margin: 30px 120px 30px 120px;
+    grid-template-columns: 100%;
+  }
+
+  .wachtwoord-vergeten{
+    text-align: center;
   }
 }
 
