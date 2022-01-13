@@ -54,7 +54,7 @@ export default {
   },
   methods:{
     toevoegen(){
-      fetch('https://localhost:8000/createQuestion', {
+      fetch('http://localhost:8000/createQuestion', {
         body: JSON.stringify(this.form),
         method: "POST"
       })
