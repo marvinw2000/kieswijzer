@@ -100,6 +100,15 @@ export default {
 
       let allCorrectAnswer = document.getElementsByClassName('juisteAntwoord')
       let currentCorectAnswer = allCorrectAnswer[updateId]
+      let trimedAnswer = currentCorectAnswer.textContent.toLowerCase().trim()
+      let corectAnswer = 0
+      if (trimedAnswer === 'true'){
+        corectAnswer = 1
+      }
+      if (trimedAnswer === 'false'){
+        corectAnswer = 0
+      }
+      console.log(corectAnswer)
 
       let allPointsIct = document.getElementsByClassName('puntenIct')
       let currentPointsIct = allPointsIct[updateId]
@@ -118,7 +127,7 @@ export default {
 
       const json = {
         "currentQuestion": currentQuestion.textContent,
-        "currentCorectAnswer": currentCorectAnswer,
+        "corectAnswer": corectAnswer,
         "currentPointsIct": currentPointsIct.textContent,
         "currentPointsAenM": currentPointsAenM.textContent,
         "currentPointsBenI": currentPointsBenI.textContent,
@@ -135,7 +144,7 @@ export default {
       .then((myJson)=>{
         console.log(myJson);
       })
-      this.$router.go('crud')
+      // this.$router.go('crud')
     }
   }
 }
