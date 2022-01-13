@@ -29,25 +29,25 @@
           <tr v-for="(vraag, index) in vragenData" :key="index">
             <td>{{ index + 1 }}</td>
             <td>
-              <div contenteditable class="vraagNaam">{{ vraag.vraag }}</div>
+              <div contenteditable="true" class="vraagNaam">{{ vraag.vraag }}</div>
             </td>
             <td>
-              <div contenteditable class="juisteAntwoord">{{ vraag.juisteAntwoord }}</div>
+              <div contenteditable="true" class="juisteAntwoord" min="0" max="2">{{ vraag.juisteAntwoord }}</div>
             </td>
             <td>
-              <div contenteditable class="puntenIct">{{ vraag.puntenIct }}</div>
+              <div contenteditable="true" class="puntenIct" min="0" max="3">{{ vraag.puntenIct }}</div>
             </td>
             <td>
-              <div contenteditable class="puntenAenM">{{ vraag.puntenAenM }}</div>
+              <div contenteditable="true" class="puntenAenM" min="0" max="3">{{ vraag.puntenAenM }}</div>
             </td>
             <td>
-              <div contenteditable class="puntenBenI">{{ vraag.puntenBenI }}</div>
+              <div contenteditable="true" class="puntenBenI" min="0" max="3">{{ vraag.puntenBenI }}</div>
             </td>
             <td>
-              <div contenteditable class="puntenMei">{{ vraag.puntenMei }}</div>
+              <div contenteditable="true" class="puntenMei" min="0" max="3">{{ vraag.puntenMei }}</div>
             </td>
             <td>
-              <div contenteditable class="puntenTenI">{{ vraag.puntenTenI }}</div>
+              <div contenteditable="true" class="puntenTenI" min="0" max="3">{{ vraag.puntenTenI }}</div>
             </td>
             <td>
               <!--          <router-link to="update">-->
@@ -71,7 +71,7 @@ export default {
   name: "Crud",
 
   beforeCreate() {
-    fetch('https://127.0.0.1:8000/getAllQuestions')
+    fetch('http://127.0.0.1:8000/getAllQuestions')
         .then((response) => {
           return response.json();
         })
@@ -90,7 +90,7 @@ export default {
   methods: {
     deleteVraag(id) {
       if (confirm(`weet je zeker dat je vraag ${id} wilt verwijderen`)) {
-        fetch(`https://127.0.0.1:8000/deleteQuestion/${id}`)
+        fetch(`http://127.0.0.1:8000/deleteQuestion/${id}`)
         this.$router.go('crud')
       }
     },
@@ -134,7 +134,7 @@ export default {
         "currentPointsMei": currentPointsMei.textContent,
         "currentPointsTenI": currentPointsTenI.textContent
       }
-      fetch(`https://127.0.0.1:8000/updateQuestion/${id}`, {
+      fetch(`http://127.0.0.1:8000/updateQuestion/${id}`, {
         body: JSON.stringify(json),
         method: "POST"
       }).then((response) =>{

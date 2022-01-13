@@ -33,7 +33,7 @@ import router from "../router";
 export default {
   name: "VraagComponent",
   beforeCreate() {
-    fetch('https://127.0.0.1:8000/getAllQuestions')
+    fetch('http://127.0.0.1:8000/getAllQuestions')
         .then((response) => {
           return response.json();
         })
