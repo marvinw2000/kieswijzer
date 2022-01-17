@@ -8,7 +8,7 @@
         </div>
         <div class="form-group">
           <label>Juiste antwoord</label>
-          <input type="number" v-model="form.juisteAntwoord" min="0" max="1" required class="form-control" placeholder="true = 1 & false = 0">
+          <input type="text" v-model="form.juisteAntwoord" required class="form-control" placeholder="true/false">
         </div>
         <div class="form-group">
           <label>Punten ICT</label>

@@ -6,8 +6,6 @@ import Informatie from "../components/Informatie";
 import Crud from "../components/Crud";
 import Login from "../components/Login";
 import NieuweVraag from "../components/NieuweVraag";
-import UpdateVraag from "../components/UpdateVraag";
-
 
 const routes=[
     {
@@ -44,11 +42,6 @@ const routes=[
         path:'/nieuw',
         name:'nieuw',
         component: NieuweVraag
-    },
-    {
-        path:'/update',
-        name:'update',
-        component: UpdateVraag
     }
 ];
 
