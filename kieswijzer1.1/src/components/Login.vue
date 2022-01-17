@@ -7,12 +7,12 @@
       </div>
       <form>
         <div class="form-group">
-          <label for="InputEmail">gebruikers naam</label>
-          <input type="text" class="form-control" id="InputEmail" placeholder="mijn gebruikers naam">
+          <label for="InputGebrNaam">gebruikers naam</label>
+          <input type="text" class="form-control" id="InputGebrNaam" placeholder="mijn gebruikers naam">
         </div>
         <div class="form-group">
-          <label for="InputPassword">wachtwoord</label>
-          <input type="password" class="form-control" id="InputPassword" placeholder="mijn wachtwoord">
+          <label for="InputWachtwoord">wachtwoord</label>
+          <input type="password" class="form-control" id="InputWachtwoord" placeholder="mijn wachtwoord">
         </div>
         <button type="submit" class="btn btn-primary">login</button>
       </form>

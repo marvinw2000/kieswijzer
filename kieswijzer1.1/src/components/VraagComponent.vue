@@ -4,7 +4,7 @@
   <div id="midden">
     <div id="containerBinnen">
       <div id="vraag">
-        <h1>Vraag {{vraagData.id}}:</h1>
+        <h1>Vraag {{iteratie + 1}}:</h1>
         <p>{{vraagData.vraag}}</p>
       </div>
       <div id="buttons">
@@ -16,7 +16,7 @@
           <div id="point"></div>
         </div>
         <div id="progesieMobile">
-          {{vraagData.id +` van `+ vragenData.length}}
+          {{iteratie + 1 +` van `+ vragenData.length}}
         </div>
       </div>
     </div>
@@ -39,6 +39,7 @@ export default {
         })
         .then((myJson) => {
           this.vragenData = myJson;
+          this.lengten = 500/myJson.length
           //console.log(this.vragenData)
           //console.log(this.vragenData[0].id)
           //console.log(this.vragenData[0].vraag)
@@ -47,6 +48,7 @@ export default {
   data(){
     return{
       vragenData: null,
+      lengten:0,
       iteratie:0,
       geklikteButton:true,
       allPoints:[
@@ -59,7 +61,7 @@ export default {
       nummer1:"",
       nummer2:"",
       nummer3:"",
-      aantalProgesie:0,
+      //aantalProgesie:null,
       progesie:""
     }
   },
@@ -76,8 +78,11 @@ export default {
       //console.log('next')
       //doet vraag + 1
       this.iteratie++
-      this.aantalProgesie += 10.5
-      this.progesie = this.aantalProgesie + 'px'
+      let x = this.iteratie * this.lengten.toFixed()
+      this.progesie = x + 'px'
+      //console.log(this.lengten)
+      //console.log(this.lengten.toFixed())
+      //console.log(x)
       document.getElementById("point").style.marginLeft = this.progesie;
     },
     //functcdcie om punten te controleren en verdelen
@@ -162,6 +167,7 @@ export default {
   width: 100%;
 }
 #vraag h1{
+  margin-top: 25px;
   text-align: center;
 }
 #vraag p{
@@ -203,7 +209,7 @@ export default {
   height: 0px;
 }
 #point{
-  margin-left:-3px;
+  margin-left: 0px;
   margin-top: -7px;
   width: 15px;
   height: 15px;
@@ -245,7 +251,7 @@ export default {
     display: inline-block;
     margin-top: 50px;
     border: 2px solid darkgray;
-    width: 500px;
+    width: 480px;
     height: 0px;
   }
   #point{
