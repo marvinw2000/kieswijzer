@@ -5,17 +5,15 @@
       <div id="imgCenter">
         <img src="../assets/login.png" alt="login">
       </div>
-      <form>
         <div class="form-group">
-          <label for="InputGebrNaam">gebruikers naam</label>
-          <input type="text" class="form-control" id="InputGebrNaam" placeholder="mijn gebruikers naam">
+          <label>gebruikers naam</label>
+          <input type="text" v-model="form.inputGebruikersNaam" class="form-control" placeholder="mijn gebruikers naam">
         </div>
         <div class="form-group">
-          <label for="InputWachtwoord">wachtwoord</label>
-          <input type="password" class="form-control" id="InputWachtwoord" placeholder="mijn wachtwoord">
+          <label>wachtwoord</label>
+          <input type="password" v-model="form.inputWachtwoord" class="form-control" placeholder="mijn wachtwoord">
         </div>
-        <button type="submit" class="btn btn-primary">login</button>
-      </form>
+        <button type="submit"  v-on:click="login()" class="btn btn-primary">login</button>
     </div>
     <div id="rechts"></div>
   </div>
@@ -24,7 +22,43 @@
 
 <script>
 export default {
-  name: "Login"
+  name: "Login",
+  data(){
+    return{
+      form:{
+        inputGebruikersNaam:null,
+        inputWachtwoord:null,
+        userRoll:'',
+        role:'admin'
+      }
+    }
+  },
+  methods:{
+    login(){
+      //console.log('test')
+      //console.log(`de gebruikersnaam is ${this.form.inputGebruikersNaam}`)
+      //console.log(`het wachtwoord is ${this.form.inputWachtwoord}`)
+      if (this.inputGebruikersNaam != '' && this.inputWachtwoord != '')
+      {
+        //console.log('suc6')
+        fetch(`https://127.0.0.1:8000/login`,{
+          body: JSON.stringify(this.form),
+          method: "POST"
+        }).then((response) => {
+          return response.json();
+        }).then((myJson)=>{
+          console.log(myJson);
+          if(this.role === myJson[0] ){
+              console.log('ok')
+              this.userRoll = 'admin'
+              sessionStorage.setItem("userRoll",this.userRoll)
+              this.$router.push("/crud")
+          }
+        })
+      }
+    }
+  }
+
 }
 </script>
 

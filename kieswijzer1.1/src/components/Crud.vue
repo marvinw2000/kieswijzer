@@ -69,8 +69,13 @@
 
 export default {
   name: "Crud",
-
   beforeCreate() {
+    let userRoll = sessionStorage.getItem("userRoll")
+    if(userRoll === 'admin'){
+      console.log('suc6')
+    }else{
+      this.$router.push("/kieswijzer")
+    }
     fetch('https://127.0.0.1:8000/getAllQuestions')
         .then((response) => {
           return response.json();
