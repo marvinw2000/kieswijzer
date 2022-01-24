@@ -38,7 +38,14 @@
 <script>
 export default {
   name: "NieuweVraag",
-
+  beforeCreate() {
+    let userRoll = sessionStorage.getItem("userRoll")
+    if(userRoll === 'admin'){
+      console.log('suc6')
+    }else{
+      this.$router.push("/kieswijzer")
+    }
+  },
   data(){
     return{
       form:{
