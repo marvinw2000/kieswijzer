@@ -149,7 +149,6 @@ export default {
       .then((myJson)=>{
         console.log(myJson);
       })
-      //this.$router.go('crud')
     }
   }
 }

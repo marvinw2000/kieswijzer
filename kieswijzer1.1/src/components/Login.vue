@@ -54,7 +54,11 @@ export default {
               sessionStorage.setItem("userRoll",this.userRoll)
               this.$router.push("/crud")
           }
+        }).catch((error) => {
+          console.log(error)
+          alert('login mislukt')
         })
+
       }
     }
   }
