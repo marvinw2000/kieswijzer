@@ -40,7 +40,7 @@ export default {
             this.tekstPlaats3 = schoolData.schoolInfo[this.n3].content
         },
         change(){
-            console.log('change')
+            //console.log('change')
 
             if (this.fotoPlaats1 === schoolData.schoolInfo[this.n1].image1){
                 this.fotoPlaats1 = schoolData.schoolInfo[this.n1].image2
