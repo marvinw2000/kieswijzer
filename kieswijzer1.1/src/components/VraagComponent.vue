@@ -7,6 +7,9 @@
         <h1>Vraag {{iteratie + 1}}:</h1>
         <p>{{vraagData.vraag}}</p>
       </div>
+      <div id="foto">
+        <img id="img" src="images/dummyImg.jpg">
+      </div>
       <div id="buttons">
         <div v-on:click="trueGeklikt()" class="button groen">&#10003;</div>
         <div v-on:click="falseGeklikt()" class="button rood">&#9587;</div>
@@ -147,6 +150,14 @@ export default {
   margin-left: 0px;
   margin-right: 0px;
 }
+#foto{
+  display: flex;
+  justify-content: center;
+}
+#img{
+  width: 400px;
+  height: 200px;
+}
 #containerBuiten{
   display: flex;
   width: 100%;
@@ -181,17 +192,17 @@ export default {
 }
 .button{
   color: white;
-  padding: 15px 60px 15px 60px;
+  padding: 10px 65px 10px 65px;
   margin: 10px;
   border-radius: 15px;
   cursor: pointer;
 }
 .rood{
-  font-size: 50px;
+  font-size: 45px;
   background-color: #E30513;
 }
 .groen{
-  font-size: 70px;
+  font-size: 55px;
   background-color: green;
 }
 #progresionBar{
@@ -203,7 +214,7 @@ export default {
 #bar{
   display: none;
   align-self: center;
-  margin-top: 50px;
+  margin-top: 30px;
   border: 2px solid darkgray;
   width: 500px;
   height: 0px;
@@ -228,17 +239,17 @@ export default {
 @media (min-width: 800px) {
   .button{
     color: white;
-    padding: 40px 130px 40px 130px;
+    padding: 15px 90px 15px 90px;
     margin: 10px;
     border-radius: 15px;
     cursor: pointer;
   }
   .rood{
-    font-size: 80px;
+    font-size: 55px;
     background-color: #E20D18;
   }
   .groen{
-    font-size: 100px;
+    font-size: 65px;
     background-color: green;
   }
   #progresionBar{
@@ -249,7 +260,7 @@ export default {
   }
   #bar{
     display: inline-block;
-    margin-top: 50px;
+    margin-top: 30px;
     border: 2px solid darkgray;
     width: 480px;
     height: 0px;

@@ -30,6 +30,10 @@
           <label>Punten TenI</label>
           <input type="number" v-model="form.puntenTenI" min="0" max="3" required class="form-control" placeholder="aantal punten">
         </div>
+        <div class="form-group">
+          <label>upload een afbeelding</label>
+          <input required class="form-control" type="file" name="image" >
+        </div>
         <button type="submit" v-on:click="toevoegen()" class="buttonToevoegen">Toevoegen</button>
       </form>
     </div>
@@ -75,7 +79,15 @@ export default {
 </script>
 
 <style scoped>
+.custom-file-input::before {
 
+}
+label{
+  margin-right: 10px;
+}
+input{
+  margin-right: 10px;
+}
 .container{
   margin-top: 50px;
 }
