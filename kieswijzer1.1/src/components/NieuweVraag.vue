@@ -32,7 +32,7 @@
         </div>
         <div class="form-group">
           <label>upload een afbeelding</label>
-          <input required class="form-control" type="file" name="image" >
+          <input required class="form-control" type="file" name="image" @change="catchImg">
         </div>
         <button type="submit" v-on:click="toevoegen()" class="buttonToevoegen">Toevoegen</button>
       </form>
@@ -59,11 +59,16 @@ export default {
         puntenAenM: null,
         puntenBenI: null,
         puntenMei: null,
-        puntenTenI: null
+        puntenTenI: null,
+        naamImg: null
       }
     }
   },
   methods:{
+    catchImg(event) {
+      this.form.naamImg = event.target.files[0].name
+      console.log(this.form.naamImg);
+    },
     toevoegen(){
       fetch('https://localhost:8000/createQuestion', {
         body: JSON.stringify(this.form),
