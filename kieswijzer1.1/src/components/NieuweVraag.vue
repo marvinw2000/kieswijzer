@@ -61,13 +61,30 @@ export default {
         puntenMei: null,
         puntenTenI: null,
         naamImg: null
-      }
+      },
+      imgFile:""
     }
   },
   methods:{
     catchImg(event) {
+      this.imgFile = event.target.files[0]
       this.form.naamImg = event.target.files[0].name
-      console.log(this.form.naamImg);
+      //console.log(this.form.imgFile)
+      //console.log(this.form.naamImg);
+
+      let formData = new FormData()
+      formData.append("file", this.imgFile)
+
+      fetch('https://localhost:8000/savePicture', {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        },
+        body: formData,
+        method: "POST"
+      })
+      .then((response) => {
+        return response.json();
+      })
     },
     toevoegen(){
       fetch('https://localhost:8000/createQuestion', {
