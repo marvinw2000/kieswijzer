@@ -43,9 +43,6 @@ export default {
         .then((myJson) => {
           this.vragenData = myJson;
           this.lengten = 500/myJson.length
-          //console.log(this.vragenData)
-          //console.log(this.vragenData[0].id)
-          //console.log(this.vragenData[0].vraag)
         });
   },
   data(){
@@ -96,6 +93,7 @@ export default {
         //controleert of de juiste button is geklikt
          if(this.geklikteButton === this.vraagData.juisteAntwoord){
            //punten worden verdeeld
+           console.log(this.vraagData)
            this.allPoints[0].points += this.vraagData.puntenIct
            this.allPoints[1].points += this.vraagData.puntenAenM
            this.allPoints[2].points += this.vraagData.puntenTenI
@@ -155,8 +153,8 @@ export default {
   justify-content: center;
 }
 #img{
-  width: 400px;
-  height: 200px;
+  width: 350px;
+  height: 250px;
 }
 #containerBuiten{
   display: flex;
