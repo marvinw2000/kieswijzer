@@ -68,10 +68,10 @@ export default {
   methods:{
     catchImg(event) {
       this.form.naamImg = event.target.files[0].name
-      const uploadFile = document.querySelector('.upload-file').files[0];
-      let formData = new FormData();
-      formData.append('uploadfile', uploadFile);
-      const url = 'https://localhost:8000/savePicture';
+      const uploadFile = document.querySelector('.upload-file').files[0]
+      let formData = new FormData()
+      formData.append('uploadfile', uploadFile)
+      const url = `${process.env.VUE_APP_BACKEND_URL}/savePicture`
       const request = new Request(url, {
         method: 'POST',
         body: formData
@@ -82,7 +82,7 @@ export default {
           .then(data => { console.log(data); })
     },
     toevoegen(){
-      fetch('https://localhost:8000/createQuestion', {
+      fetch(`${process.env.VUE_APP_BACKEND_URL}/createQuestion`, {
         body: JSON.stringify(this.form),
         method: "POST"
       })
@@ -94,7 +94,6 @@ export default {
   }
 }
 </script>
-
 <style scoped>
 .custom-file-input::before {
 

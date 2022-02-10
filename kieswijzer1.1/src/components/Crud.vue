@@ -64,7 +64,6 @@
     </div>
   </div>
 </template>
-
 <script>
 
 export default {
@@ -76,33 +75,29 @@ export default {
     }else{
       this.$router.push("/kieswijzer")
     }
-    fetch('https://127.0.0.1:8000/getAllQuestions')
+    fetch(`${process.env.VUE_APP_BACKEND_URL}/getAllQuestions`)
         .then((response) => {
           return response.json();
         })
         .then((myJson) => {
           this.vragenData = myJson;
-          //console.log(this.vragenData)
-          //console.log(this.vragenData[0].vraag)
         });
   },
   data() {
     return {
       vragenData: null
-
     }
   },
   methods: {
     deleteVraag(id) {
       if (confirm(`weet je zeker dat je de vraag wilt verwijderen`)) {
-        fetch(`https://127.0.0.1:8000/deleteQuestion/${id}`)
+        fetch(`${process.env.VUE_APP_BACKEND_URL}/deleteQuestion/${id}`)
         this.$router.go('crud')
       }
     },
     updateAction(updateId, id) {
       let allQuestions = document.getElementsByClassName('vraagNaam')
       let currentQuestion = allQuestions[updateId]
-
       let allCorrectAnswer = document.getElementsByClassName('juisteAntwoord')
       let currentCorectAnswer = allCorrectAnswer[updateId]
       let trimedAnswer = currentCorectAnswer.textContent.toLowerCase().trim()
@@ -113,7 +108,6 @@ export default {
       if (trimedAnswer === 'false'){
         corectAnswer = false
       }
-      console.log(corectAnswer)
 
       let allPointsIct = document.getElementsByClassName('puntenIct')
       let currentPointsIct = allPointsIct[updateId]
@@ -139,7 +133,7 @@ export default {
         "currentPointsMei": currentPointsMei.textContent,
         "currentPointsTenI": currentPointsTenI.textContent
       }
-      fetch(`https://127.0.0.1:8000/updateQuestion/${id}`, {
+      fetch(`${process.env.VUE_APP_BACKEND_URL}/updateQuestion/${id}`, {
         body: JSON.stringify(json),
         method: "POST"
       }).then((response) =>{
@@ -163,7 +157,6 @@ body {
 .table-responsive {
   margin: 30px 0;
 }
-
 .table-wrapper {
   min-width: 1000px;
   background: #fff;

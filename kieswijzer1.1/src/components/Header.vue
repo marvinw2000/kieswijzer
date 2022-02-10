@@ -16,9 +16,6 @@ export default
     return{
       logoHeader: require('@/assets/logoROC.jpg')
     }
-  },
-  methods: {
-
   }
 }
 </script>
@@ -37,11 +34,9 @@ export default
   border-inline-width: 30px;
   display: flex;
 }
-
 .buttonOpleidingen{
   margin-left: auto;
 }
-
 .headerButton{
   background-color: #E20D18;
   color:white;
