@@ -8,7 +8,7 @@
         <p>{{vraagData.vraag}}</p>
       </div>
       <div id="foto">
-        <img id="img" src="images/dummyImg.jpg">
+        <img id="img" v-bind:src="image">
       </div>
       <div id="buttons">
         <div v-on:click="trueGeklikt()" class="button groen">&#10003;</div>
@@ -45,8 +45,12 @@ export default {
           this.lengten = 500/myJson.length
         });
   },
+  beforeMount(){
+
+  },
   data(){
     return{
+      image: null,
       vragenData: null,
       lengten:0,
       iteratie:0,
@@ -65,6 +69,10 @@ export default {
       progesie:""
     }
   },
+  mounted(){
+    this.image = `https://127.0.0.1:8000/uploads/` + this.vraagData.image
+    console.log(this.vraagData.image)
+  },
   computed:{
     vraagData(){
       return{
@@ -76,24 +84,20 @@ export default {
     //functie om naar de volgende vraag te gaan
     next(){
       //console.log('next')
-      //doet vraag + 1
       this.iteratie++
       let x = this.iteratie * this.lengten.toFixed()
       this.progesie = x + 'px'
-      //console.log(this.lengten)
-      //console.log(this.lengten.toFixed())
-      //console.log(x)
-      document.getElementById("point").style.marginLeft = this.progesie;
+      document.getElementById("point").style.marginLeft = this.progesie
+      this.image = `https://127.0.0.1:8000/uploads/` + this.vraagData.image
+      console.log(this.vraagData.image)
     },
     //functcdcie om punten te controleren en verdelen
     controle() {
-      //console.log('controle')
       //controleert of er nog vragen zijn
       if (this.iteratie < this.vragenData.length -1) {
         //controleert of de juiste button is geklikt
          if(this.geklikteButton === this.vraagData.juisteAntwoord){
            //punten worden verdeeld
-           console.log(this.vraagData)
            this.allPoints[0].points += this.vraagData.puntenIct
            this.allPoints[1].points += this.vraagData.puntenAenM
            this.allPoints[2].points += this.vraagData.puntenTenI
@@ -112,14 +116,12 @@ export default {
          this.nummer1 = this.allPoints[4].id
          this.nummer2 = this.allPoints[3].id
          this.nummer3 = this.allPoints[2].id
-
          //de top 3 word opgeslagen in de html session
          sessionStorage.setItem("n1",this.nummer1)
          sessionStorage.setItem("n2",this.nummer2)
          sessionStorage.setItem("n3",this.nummer3)
          router.push('resultaten')//hiermee ga je naar de resultaaten pagina
       }
-
     },
     //button voor als je op vals geklikt hebt
     falseGeklikt(){
@@ -131,7 +133,8 @@ export default {
     },
     //button voor als je op true geklikt hebt
     trueGeklikt(){
-      console.log('trueGeklikt')
+      // fetch(`https://127.0.0.1:8000/getAllPictures`)
+      //console.log('trueGeklikt')
       //staat geklikteButton veranderd
        this.geklikteButton = true
       //roept controle functie aan
@@ -139,6 +142,7 @@ export default {
     }
   }
 }
+//\kieswijzerApi\kieswijzerApi1.0\public\uploads\imgVraag1.png
 </script>
 
 <style scoped>
