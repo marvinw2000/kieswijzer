@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <h2>Nieuwe vraag toevoegen</h2>
-      <form>
+      <form method="POST" enctype="multipart/form-data" class="question-form">
         <div class="form-group">
           <label>Vraag</label>
           <input type="text" v-model="form.vraag" required class="form-control" placeholder="Plaats uw vraag">
@@ -30,6 +30,10 @@
           <label>Punten TenI</label>
           <input type="number" v-model="form.puntenTenI" min="0" max="3" required class="form-control" placeholder="aantal punten">
         </div>
+        <div class="form-group">
+          <label>upload een afbeelding</label>
+          <input required class="form-control upload-file" type="file" name="image" @change="catchImg">
+        </div>
         <button type="submit" v-on:click="toevoegen()" class="buttonToevoegen">Toevoegen</button>
       </form>
     </div>
@@ -55,11 +59,28 @@ export default {
         puntenAenM: null,
         puntenBenI: null,
         puntenMei: null,
-        puntenTenI: null
-      }
+        puntenTenI: null,
+        naamImg: null
+      },
+      imgFile:""
     }
   },
   methods:{
+    catchImg(event) {
+      this.form.naamImg = event.target.files[0].name
+      const uploadFile = document.querySelector('.upload-file').files[0];
+      let formData = new FormData();
+      formData.append('uploadfile', uploadFile);
+      const url = 'https://localhost:8000/savePicture';
+      const request = new Request(url, {
+        method: 'POST',
+        body: formData
+      });
+
+      fetch(request)
+          .then(response => response.json())
+          .then(data => { console.log(data); })
+    },
     toevoegen(){
       fetch('https://localhost:8000/createQuestion', {
         body: JSON.stringify(this.form),
@@ -75,7 +96,15 @@ export default {
 </script>
 
 <style scoped>
+.custom-file-input::before {
 
+}
+label{
+  margin-right: 10px;
+}
+input{
+  margin-right: 10px;
+}
 .container{
   margin-top: 50px;
 }

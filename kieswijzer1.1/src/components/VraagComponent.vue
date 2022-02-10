@@ -7,6 +7,9 @@
         <h1>Vraag {{iteratie + 1}}:</h1>
         <p>{{vraagData.vraag}}</p>
       </div>
+      <div id="foto">
+        <img id="img" v-bind:src="image">
+      </div>
       <div id="buttons">
         <div v-on:click="trueGeklikt()" class="button groen">&#10003;</div>
         <div v-on:click="falseGeklikt()" class="button rood">&#9587;</div>
@@ -40,13 +43,14 @@ export default {
         .then((myJson) => {
           this.vragenData = myJson;
           this.lengten = 500/myJson.length
-          //console.log(this.vragenData)
-          //console.log(this.vragenData[0].id)
-          //console.log(this.vragenData[0].vraag)
         });
+  },
+  beforeMount(){
+
   },
   data(){
     return{
+      image: null,
       vragenData: null,
       lengten:0,
       iteratie:0,
@@ -65,6 +69,10 @@ export default {
       progesie:""
     }
   },
+  mounted(){
+    this.image = `https://127.0.0.1:8000/uploads/` + this.vraagData.image
+    console.log(this.vraagData.image)
+  },
   computed:{
     vraagData(){
       return{
@@ -76,18 +84,15 @@ export default {
     //functie om naar de volgende vraag te gaan
     next(){
       //console.log('next')
-      //doet vraag + 1
       this.iteratie++
       let x = this.iteratie * this.lengten.toFixed()
       this.progesie = x + 'px'
-      //console.log(this.lengten)
-      //console.log(this.lengten.toFixed())
-      //console.log(x)
-      document.getElementById("point").style.marginLeft = this.progesie;
+      document.getElementById("point").style.marginLeft = this.progesie
+      this.image = `https://127.0.0.1:8000/uploads/` + this.vraagData.image
+      console.log(this.vraagData.image)
     },
     //functcdcie om punten te controleren en verdelen
     controle() {
-      //console.log('controle')
       //controleert of er nog vragen zijn
       if (this.iteratie < this.vragenData.length -1) {
         //controleert of de juiste button is geklikt
@@ -111,14 +116,12 @@ export default {
          this.nummer1 = this.allPoints[4].id
          this.nummer2 = this.allPoints[3].id
          this.nummer3 = this.allPoints[2].id
-
          //de top 3 word opgeslagen in de html session
          sessionStorage.setItem("n1",this.nummer1)
          sessionStorage.setItem("n2",this.nummer2)
          sessionStorage.setItem("n3",this.nummer3)
          router.push('resultaten')//hiermee ga je naar de resultaaten pagina
       }
-
     },
     //button voor als je op vals geklikt hebt
     falseGeklikt(){
@@ -130,7 +133,8 @@ export default {
     },
     //button voor als je op true geklikt hebt
     trueGeklikt(){
-      console.log('trueGeklikt')
+      // fetch(`https://127.0.0.1:8000/getAllPictures`)
+      //console.log('trueGeklikt')
       //staat geklikteButton veranderd
        this.geklikteButton = true
       //roept controle functie aan
@@ -138,6 +142,7 @@ export default {
     }
   }
 }
+//\kieswijzerApi\kieswijzerApi1.0\public\uploads\imgVraag1.png
 </script>
 
 <style scoped>
@@ -146,6 +151,14 @@ export default {
   padding: 0px;
   margin-left: 0px;
   margin-right: 0px;
+}
+#foto{
+  display: flex;
+  justify-content: center;
+}
+#img{
+  width: 350px;
+  height: 250px;
 }
 #containerBuiten{
   display: flex;
@@ -181,17 +194,17 @@ export default {
 }
 .button{
   color: white;
-  padding: 15px 60px 15px 60px;
+  padding: 10px 65px 10px 65px;
   margin: 10px;
   border-radius: 15px;
   cursor: pointer;
 }
 .rood{
-  font-size: 50px;
+  font-size: 45px;
   background-color: #E30513;
 }
 .groen{
-  font-size: 70px;
+  font-size: 55px;
   background-color: green;
 }
 #progresionBar{
@@ -203,7 +216,7 @@ export default {
 #bar{
   display: none;
   align-self: center;
-  margin-top: 50px;
+  margin-top: 30px;
   border: 2px solid darkgray;
   width: 500px;
   height: 0px;
@@ -228,17 +241,17 @@ export default {
 @media (min-width: 800px) {
   .button{
     color: white;
-    padding: 40px 130px 40px 130px;
+    padding: 15px 90px 15px 90px;
     margin: 10px;
     border-radius: 15px;
     cursor: pointer;
   }
   .rood{
-    font-size: 80px;
+    font-size: 55px;
     background-color: #E20D18;
   }
   .groen{
-    font-size: 100px;
+    font-size: 65px;
     background-color: green;
   }
   #progresionBar{
@@ -249,7 +262,7 @@ export default {
   }
   #bar{
     display: inline-block;
-    margin-top: 50px;
+    margin-top: 30px;
     border: 2px solid darkgray;
     width: 480px;
     height: 0px;
