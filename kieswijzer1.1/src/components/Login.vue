@@ -41,7 +41,7 @@ export default {
       if (this.inputGebruikersNaam != '' && this.inputWachtwoord != '')
       {
         //console.log('suc6')
-        fetch(`https://127.0.0.1:8000/login`,{
+        fetch(`${process.env.VUE_APP_BACKEND_URL}/login`,{
           body: JSON.stringify(this.form),
           method: "POST"
         }).then((response) => {

@@ -26,17 +26,14 @@
   </div>
   <div id="rechts"></div>
 </div>
-
 </template>
-
 <script>
-
 import router from "../router";
 
 export default {
   name: "VraagComponent",
   beforeCreate() {
-    fetch('https://127.0.0.1:8000/getAllQuestions')
+    fetch(`${process.env.VUE_APP_BACKEND_URL}/getAllQuestions`)
         .then((response) => {
           return response.json();
         })
@@ -44,9 +41,6 @@ export default {
           this.vragenData = myJson;
           this.lengten = 500/myJson.length
         });
-  },
-  beforeMount(){
-
   },
   data(){
     return{
@@ -65,13 +59,11 @@ export default {
       nummer1:"",
       nummer2:"",
       nummer3:"",
-      //aantalProgesie:null,
       progesie:""
     }
   },
   mounted(){
-    this.image = `https://127.0.0.1:8000/uploads/` + this.vraagData.image
-    console.log(this.vraagData.image)
+    this.image = `${process.env.VUE_APP_BACKEND_URL}/uploads/` + this.vraagData.image
   },
   computed:{
     vraagData(){
@@ -83,13 +75,11 @@ export default {
   methods:{
     //functie om naar de volgende vraag te gaan
     next(){
-      //console.log('next')
       this.iteratie++
       let x = this.iteratie * this.lengten.toFixed()
       this.progesie = x + 'px'
       document.getElementById("point").style.marginLeft = this.progesie
-      this.image = `https://127.0.0.1:8000/uploads/` + this.vraagData.image
-      console.log(this.vraagData.image)
+      this.image = `${process.env.VUE_APP_BACKEND_URL}/uploads/` + this.vraagData.image
     },
     //functcdcie om punten te controleren en verdelen
     controle() {
@@ -104,12 +94,11 @@ export default {
            this.allPoints[3].points += this.vraagData.puntenMei
            this.allPoints[4].points += this.vraagData.puntenBenI
          }
-         //console.log(this.allPoints)
          //functie next word aangeroepen
          this.next()
       }
       else{
-         //allen vragen zijn beantwoord
+         //alle vragen zijn beantwoord
          //sorteert de lijst met punten
          this.allPoints.sort((a, b) => {return a.points - b.points})
          // nummer 4 is de grootste
@@ -125,7 +114,6 @@ export default {
     },
     //button voor als je op vals geklikt hebt
     falseGeklikt(){
-      //console.log('falseGeklikt')
       //staat geklikteButton veranderd
       this.geklikteButton = false
       // roept controle functie aan
@@ -133,18 +121,13 @@ export default {
     },
     //button voor als je op true geklikt hebt
     trueGeklikt(){
-      // fetch(`https://127.0.0.1:8000/getAllPictures`)
-      //console.log('trueGeklikt')
-      //staat geklikteButton veranderd
        this.geklikteButton = true
       //roept controle functie aan
        this.controle()
     }
   }
 }
-//\kieswijzerApi\kieswijzerApi1.0\public\uploads\imgVraag1.png
 </script>
-
 <style scoped>
 *{
   font-family: ff-scala-sans-pro,sans-serif;
@@ -157,7 +140,7 @@ export default {
   justify-content: center;
 }
 #img{
-  width: 350px;
+
   height: 250px;
 }
 #containerBuiten{
