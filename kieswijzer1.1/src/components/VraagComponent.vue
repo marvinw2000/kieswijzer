@@ -33,6 +33,7 @@ import router from "../router";
 export default {
   name: "VraagComponent",
   beforeCreate() {
+    //alle vragen worden opgehaald voor dat de pagina gemaakt word.
     fetch(`${process.env.VUE_APP_BACKEND_URL}/getAllQuestions`)
         .then((response) => {
           return response.json();
@@ -62,6 +63,7 @@ export default {
       progesie:""
     }
   },
+  //als de pagina gestart word, word de functie uitgevoerd.
   mounted(){
     this.image = `${process.env.VUE_APP_BACKEND_URL}/uploads/` + this.vraagData.image
   },
@@ -79,6 +81,7 @@ export default {
       let x = this.iteratie * this.lengten.toFixed()
       this.progesie = x + 'px'
       document.getElementById("point").style.marginLeft = this.progesie
+      //de juisten foto word uit de database gehaald.
       this.image = `${process.env.VUE_APP_BACKEND_URL}/uploads/` + this.vraagData.image
     },
     //functcdcie om punten te controleren en verdelen

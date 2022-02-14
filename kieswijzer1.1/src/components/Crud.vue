@@ -68,13 +68,17 @@
 
 export default {
   name: "Crud",
+  //deze functie word aangeroepen voor dat de pagina gemaakt word.
   beforeCreate() {
+    //userRoll word opgehaald uit local storage.
     let userRoll = sessionStorage.getItem("userRoll")
+    //userroll word gecontroleerd.
     if(userRoll === 'admin'){
       console.log('suc6')
     }else{
       this.$router.push("/kieswijzer")
     }
+    //fetch request om alle vragen op te hallen
     fetch(`${process.env.VUE_APP_BACKEND_URL}/getAllQuestions`)
         .then((response) => {
           return response.json();
@@ -89,14 +93,21 @@ export default {
     }
   },
   methods: {
+    //delete methode om vraag te delete als parameter moet de id meegegeven worden.
     deleteVraag(id) {
+      //waarschuwing dat de vraag verwijdert word.
       if (confirm(`weet je zeker dat je de vraag wilt verwijderen`)) {
+        //fetch request voor het delete als parameter moet de id meegegeven worden.
         fetch(`${process.env.VUE_APP_BACKEND_URL}/deleteQuestion/${id}`)
+        //pagina word herladen
         this.$router.go('crud')
       }
     },
+    //methode om een vraag te updaten id moet meegegeven als parameter.
     updateAction(updateId, id) {
+      //haal alle vragen op met de class name.
       let allQuestions = document.getElementsByClassName('vraagNaam')
+      //haal uit allen vragen de geklikte vraag op
       let currentQuestion = allQuestions[updateId]
       let allCorrectAnswer = document.getElementsByClassName('juisteAntwoord')
       let currentCorectAnswer = allCorrectAnswer[updateId]
@@ -108,7 +119,7 @@ export default {
       if (trimedAnswer === 'false'){
         corectAnswer = false
       }
-
+      //alle variable worden opgehaald uit het input veld
       let allPointsIct = document.getElementsByClassName('puntenIct')
       let currentPointsIct = allPointsIct[updateId]
 
@@ -123,7 +134,7 @@ export default {
 
       let allPointsTenI = document.getElementsByClassName('puntenTenI')
       let currentPointsTenI = allPointsTenI[updateId]
-
+      //maak een json met alle nieuwe waarde
       const json = {
         "currentQuestion": currentQuestion.textContent,
         "corectAnswer": corectAnswer,
@@ -133,6 +144,7 @@ export default {
         "currentPointsMei": currentPointsMei.textContent,
         "currentPointsTenI": currentPointsTenI.textContent
       }
+      //fetch request voor het updaten als parameter moet de id meegegeven worden.
       fetch(`${process.env.VUE_APP_BACKEND_URL}/updateQuestion/${id}`, {
         body: JSON.stringify(json),
         method: "POST"

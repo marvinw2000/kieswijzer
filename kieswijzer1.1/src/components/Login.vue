@@ -34,13 +34,12 @@ export default {
     }
   },
   methods:{
+    //login functie
     login(){
-      //console.log('test')
-      //console.log(`de gebruikersnaam is ${this.form.inputGebruikersNaam}`)
-      //console.log(`het wachtwoord is ${this.form.inputWachtwoord}`)
+      //controle of input niet leeg is
       if (this.inputGebruikersNaam != '' && this.inputWachtwoord != '')
       {
-        //console.log('suc6')
+        //fetch request voor login
         fetch(`${process.env.VUE_APP_BACKEND_URL}/login`,{
           body: JSON.stringify(this.form),
           method: "POST"
@@ -48,10 +47,12 @@ export default {
           return response.json();
         }).then((myJson)=>{
           console.log(myJson);
+          //controleer de roll van de user.
           if(this.role === myJson[0] ){
-              console.log('ok')
+              //de roll van de user word opgeslagen in locale storage
               this.userRoll = 'admin'
               sessionStorage.setItem("userRoll",this.userRoll)
+              //admin woord naar de crud pagina gestuurd
               this.$router.push("/crud")
           }
         }).catch((error) => {

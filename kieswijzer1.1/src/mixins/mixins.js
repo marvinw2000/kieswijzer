@@ -34,14 +34,13 @@ export default {
             this.fotoPlaats1 = schoolData.schoolInfo[this.n1].image1
             this.fotoPlaats2 = schoolData.schoolInfo[this.n2].image1
             this.fotoPlaats3 = schoolData.schoolInfo[this.n3].image1
-            //teskt
+            //tekst
             this.tekstPlaats1 = schoolData.schoolInfo[this.n1].content
             this.tekstPlaats2 = schoolData.schoolInfo[this.n2].content
             this.tekstPlaats3 = schoolData.schoolInfo[this.n3].content
         },
+        //functie om afbeeldingen te veranderen
         change(){
-            //console.log('change')
-
             if (this.fotoPlaats1 === schoolData.schoolInfo[this.n1].image1){
                 this.fotoPlaats1 = schoolData.schoolInfo[this.n1].image2
                 this.fotoPlaats2 = schoolData.schoolInfo[this.n2].image2
