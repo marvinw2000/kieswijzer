@@ -76,7 +76,7 @@ export default {
     if(userRoll === 'admin'){
       console.log('suc6')
     }else{
-      this.$router.push("/kieswijzer")
+      this.$router.push("/login")
     }
     //fetch request om alle vragen op te hallen
     fetch(`${process.env.VUE_APP_BACKEND_URL}/getAllQuestions`)

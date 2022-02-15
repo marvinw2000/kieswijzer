@@ -67,10 +67,11 @@ export default {
   mounted(){
     console.log('mounted')
     this.image = `${process.env.VUE_APP_BACKEND_URL}/uploads/imgVraag1.png`
+    //this.image = `${process.env.VUE_APP_BACKEND_URL}/uploads/` + this.vraagData.image
   },
   computed:{
     vraagData(){
-      return{
+      return {
         ...this.vragenData[this.iteratie]
       }
     }

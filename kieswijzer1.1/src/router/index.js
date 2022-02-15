@@ -9,8 +9,8 @@ import NieuweVraag from "../components/NieuweVraag";
 
 const routes=[
     {
-        path:'/kieswijzer',
-        name:'kieswijzer',
+        path:'/',
+        name:'/',
         component: Home
     },
     {
