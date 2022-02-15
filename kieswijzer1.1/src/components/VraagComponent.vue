@@ -65,7 +65,8 @@ export default {
   },
   //als de pagina gestart word, word de functie uitgevoerd.
   mounted(){
-    this.image = `${process.env.VUE_APP_BACKEND_URL}/uploads/` + this.vraagData.image
+    console.log('mounted')
+    this.image = `${process.env.VUE_APP_BACKEND_URL}/uploads/imgVraag1.png`
   },
   computed:{
     vraagData(){
