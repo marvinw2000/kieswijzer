@@ -28,6 +28,7 @@ export default {
       form:{
         inputGebruikersNaam:null,
         inputWachtwoord:null,
+        userName:'',
         userRoll:'',
         role:'admin'
       }
@@ -51,6 +52,9 @@ export default {
           if(this.role === myJson[0] ){
               //de roll van de user word opgeslagen in locale storage
               this.userRoll = 'admin'
+              this.userName = myJson['name']
+              //console.log(this.userName)
+              sessionStorage.setItem("userName",this.userName)
               sessionStorage.setItem("userRoll",this.userRoll)
               //admin woord naar de crud pagina gestuurd
               this.$router.push("/crud")

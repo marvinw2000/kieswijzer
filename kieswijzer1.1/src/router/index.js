@@ -6,6 +6,7 @@ import Informatie from "../components/Informatie";
 import Crud from "../components/Crud";
 import Login from "../components/Login";
 import NieuweVraag from "../components/NieuweVraag";
+import profielPagina from "../components/profielPagina";
 
 const routes=[
     {
@@ -42,6 +43,11 @@ const routes=[
         path:'/nieuw',
         name:'nieuw',
         component: NieuweVraag
+    },
+    {
+        path:'/profiel',
+        name:'profiel',
+        component: profielPagina
     }
 ];
 

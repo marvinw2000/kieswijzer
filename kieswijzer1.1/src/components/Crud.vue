@@ -1,4 +1,11 @@
 <template>
+  <div id="welkom">
+    <h3>welkom:</h3>
+    <router-link class="col-sm-2 profileLink" to="profiel" exact>
+      <h3>{{ userName }}</h3>
+      <img class="profilePicture" src="images/profile-placeholder.png" alt="">
+    </router-link>
+  </div>
   <div class="container">
     <div class="table-responsive">
       <div class="table-wrapper">
@@ -89,6 +96,7 @@ export default {
   },
   data() {
     return {
+      userName: sessionStorage.getItem("userName"),
       vragenData: null
     }
   },
@@ -165,6 +173,24 @@ body {
   color: #566787;
   background: #f5f5f5;
   font-family: 'Roboto', sans-serif;
+}
+#welkom{
+  margin: 50px;
+  border-bottom: 1px solid #D8D8D8;
+}
+#welkom h3{
+  display: inline;
+  margin: 15px;
+  margin-right: 5px;
+}
+.profileLink{
+  display: inline;
+}
+.profilePicture{
+  width: 50px;
+  margin: 15px;
+  border-radius: 25px;
+  display: inline;
 }
 .table-responsive {
   margin: 30px 0;
