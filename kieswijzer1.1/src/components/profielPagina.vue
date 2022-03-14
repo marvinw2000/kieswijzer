@@ -38,7 +38,7 @@ export default {
         return response.json();
       }).then((myJson)=>{
         console.log(myJson);
-        this.myPassword = myJson[0]
+        this.myPassword = myJson['password']
       })
     }else{
       this.$router.push("/login")
@@ -47,8 +47,7 @@ export default {
   data(){
     return{
       myUsername: sessionStorage.getItem("userName"),
-      myPassword: null,
-      myProfilePicture: null
+      myPassword: null
     }
   },
   methods:{
