@@ -1,21 +1,25 @@
 <template>
-  <div class="container">
-    <div class="links"></div>
-    <div class="midden">
+  <div id="container">
+    <div id="links"></div>
+    <div id="midden">
+      <div id="explanation">
+        <img src="images/vraag.webp">
+      </div>
       <div id="imgCenter">
         <img src="images/profile-placeholder.png" alt="">
       </div>
       <div class="form-group">
         <label>mijn gebruikers naam</label>
-        <input type="text" class="form-control" placeholder="">
+        <input type="text" class="form-control" value="test">
       </div>
       <div class="form-group">
         <label>mijn wachtwoord</label>
-        <input type="password" class="form-control" placeholder="">
+        <input type="password" id="mijnPassword" class="form-control"  value="test">
+        <input type="checkbox" v-on:click="toggle"> toon wachtwoord
       </div>
       <button type="submit"  class="btn btn-primary">update</button>
     </div>
-    <div class="rechts"></div>
+    <div id="rechts"></div>
   </div>
 </template>
 
@@ -36,13 +40,58 @@ export default {
     return{
 
     }
+  },
+  methods:{
+    toggle(){
+      let password = document.getElementById("mijnPassword");
+      if (password.type === "password") {
+        password.type = "text";
+      } else {
+        password.type = "password";
+      }
+    }
   }
 }
 </script>
 
 <style scoped>
+#container{
+  margin: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+#links{
+  height: 100%;
+  width: 25%
+}
+#midden{
+  height: 100%;
+  width: 50%
+}
+label{
+  margin: 5px;
+}
+button{
+  margin: 10px;
+}
+input {
+  text-align: center;
+}
+form{
+
+}
+#rechts{
+  height: 100%;
+  width: 25%
+}
 #imgCenter img{
   width: 80px;
+  border-radius: 40px;
+}
+#explanation img{
+  width: 15px;
+  margin-left: 350px;
 }
 
 </style>
