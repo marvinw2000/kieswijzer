@@ -29,6 +29,7 @@ export default {
         inputGebruikersNaam:null,
         inputWachtwoord:null,
         userName:'',
+        userPassword: '',
         userRoll:'',
         role:'admin'
       }
@@ -55,6 +56,7 @@ export default {
               this.userName = myJson['name']
               //console.log(this.userName)
               sessionStorage.setItem("userName",this.userName)
+              sessionStorage.setItem("userPassword",this.userPassword)
               sessionStorage.setItem("userRoll",this.userRoll)
               //admin woord naar de crud pagina gestuurd
               this.$router.push("/crud")

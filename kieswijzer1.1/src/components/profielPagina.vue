@@ -10,11 +10,11 @@
       </div>
       <div class="form-group">
         <label>mijn gebruikers naam</label>
-        <input type="text" class="form-control" value="test">
+        <input type="text" class="form-control" v-bind:value="myUsername">
       </div>
       <div class="form-group">
         <label>mijn wachtwoord</label>
-        <input type="password" id="mijnPassword" class="form-control"  value="test">
+        <input type="password" id="mijnPassword" class="form-control"  v-bind:value="myPassword">
         <input type="checkbox" v-on:click="toggle"> toon wachtwoord
       </div>
       <button type="submit"  class="btn btn-primary">update</button>
@@ -32,13 +32,23 @@ export default {
     //userroll word gecontroleerd.
     if(userRoll === 'admin'){
       console.log('suc6')
+      let name = sessionStorage.getItem("userName")
+      console.log(name)
+      fetch(`${process.env.VUE_APP_BACKEND_URL}/findUser/${name}`).then((response) =>{
+        return response.json();
+      }).then((myJson)=>{
+        console.log(myJson);
+        this.myPassword = myJson[0]
+      })
     }else{
       this.$router.push("/login")
     }
   },
   data(){
     return{
-
+      myUsername: sessionStorage.getItem("userName"),
+      myPassword: null,
+      myProfilePicture: null
     }
   },
   methods:{
