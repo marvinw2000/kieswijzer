@@ -11,7 +11,8 @@
         </div>
         <div class="form-group">
           <label>wachtwoord</label>
-          <input type="password" v-model="form.inputWachtwoord" class="form-control" placeholder="mijn wachtwoord">
+          <input type="password" id="inputPassword" v-model="form.inputWachtwoord" class="form-control" placeholder="mijn wachtwoord">
+          <input type="checkbox" v-on:click="toggle"> toon wachtwoord
         </div>
         <button type="submit"  v-on:click="login()" class="btn btn-primary">login</button>
     </div>
@@ -36,6 +37,14 @@ export default {
     }
   },
   methods:{
+    toggle(){
+      let password = document.getElementById("inputPassword");
+      if (password.type === "password") {
+        password.type = "text";
+      } else {
+        password.type = "password";
+      }
+    },
     //login functie
     login(){
       //controle of input niet leeg is
