@@ -1,4 +1,6 @@
 <template>
+  <div id="containerBig">
+    <div id="links"></div>
     <div class="container">
       <h2>Nieuwe vraag toevoegen</h2>
       <form method="POST" enctype="multipart/form-data" class="question-form">
@@ -37,6 +39,8 @@
         <button type="submit" v-on:click="toevoegen()" class="buttonToevoegen">Toevoegen</button>
       </form>
     </div>
+  <div id="rechts"></div>
+  </div>
 </template>
 
 <script>
@@ -47,7 +51,7 @@ export default {
     // de roll van de gebruiker word opghaald.
     let userRoll = sessionStorage.getItem("userRoll")
     // de roll van de user word gecontroleerd.
-    if(userRoll === 'admin'){
+    if(userRoll === 'admin' ){
       console.log('suc6')
     }else{
       this.$router.push("/login")
@@ -94,10 +98,9 @@ export default {
       fetch(`${process.env.VUE_APP_BACKEND_URL}/createQuestion`, {
         body: JSON.stringify(this.form),
         method: "POST"
+      }).then((response) => {
+        return response.json();
       })
-          .then((response) => {
-            return response.json();
-          })
       this.$router.push("/crud")
     }
   }
@@ -107,6 +110,20 @@ export default {
 .custom-file-input::before {
 
 }
+#containerBig{
+  margin: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+#links{
+  height: 100%;
+  width: 25%
+}
+#rechts{
+  height: 100%;
+  width: 25%
+}
 label{
   margin-right: 10px;
 }
@@ -115,6 +132,8 @@ input{
 }
 .container{
   margin-top: 50px;
+  height: 100%;
+  width: 50%
 }
 .form-group{
   margin-top: 10px;

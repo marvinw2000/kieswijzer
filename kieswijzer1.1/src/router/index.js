@@ -7,6 +7,7 @@ import Crud from "../components/Crud";
 import Login from "../components/Login";
 import NieuweVraag from "../components/NieuweVraag";
 import profielPagina from "../components/profielPagina";
+import profielBeheer from "../components/profielBeheer";
 
 const routes=[
     {
@@ -48,7 +49,13 @@ const routes=[
         path:'/profiel',
         name:'profiel',
         component: profielPagina
+    },
+    {
+        path:'/profielBeheer',
+        name:'profielBeheer',
+        component: profielBeheer
     }
+
 ];
 
 const router = createRouter({

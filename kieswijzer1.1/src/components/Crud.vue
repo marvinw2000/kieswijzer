@@ -5,6 +5,9 @@
       <h3>{{ userName }}</h3>
       <img class="profilePicture" src="images/profile-placeholder.png" alt="">
     </router-link>
+    <div id="uitlogButton">
+      <button class="btn btn-primary" v-on:click="uitloggen">log uit</button>
+    </div>
   </div>
   <div class="container">
     <div class="table-responsive">
@@ -81,6 +84,7 @@ export default {
     let userRoll = sessionStorage.getItem("userRoll")
     //userroll word gecontroleerd.
     if(userRoll === 'admin'){
+      //console.log(userRoll)
       console.log('suc6')
     }else{
       this.$router.push("/login")
@@ -101,6 +105,10 @@ export default {
     }
   },
   methods: {
+    uitloggen(){
+      sessionStorage.setItem("userRoll",'bezoeker')
+      this.$router.go('crud')
+    },
     //delete methode om vraag te delete als parameter moet de id meegegeven worden.
     deleteVraag(id) {
       //waarschuwing dat de vraag verwijdert word.
@@ -169,6 +177,9 @@ export default {
 </script>
 
 <style scoped>
+#uitlogButton{
+  float: right;
+}
 body {
   color: #566787;
   background: #f5f5f5;
@@ -213,12 +224,6 @@ body {
   margin: 8px 0 0;
   font-size: 22px;
 }
-
-.search-box {
-  position: relative;
-  float: right;
-}
-
 .search-box input {
   height: 34px;
   border-radius: 20px;
@@ -277,11 +282,6 @@ table.table td a.delete {
 
 table.table td i {
   font-size: 19px;
-}
-
-.pagination {
-  float: right;
-  margin: 0 0 5px;
 }
 
 .pagination li a {

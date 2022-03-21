@@ -29,9 +29,10 @@ export default {
       form:{
         inputGebruikersNaam:null,
         inputWachtwoord:null,
-        userName:'',
+        userName:null,
         userPassword: '',
-        userRoll:'',
+        userRoll:null,
+        superAdmin:'superAdmin',
         role:'admin'
       }
     }
@@ -58,18 +59,16 @@ export default {
           return response.json();
         }).then((myJson)=>{
           console.log(myJson);
-          //controleer de roll van de user.
-          if(this.role === myJson[0] ){
+          //controleer de roll van de user
+          if(this.role === myJson[0]){
               //de roll van de user word opgeslagen in locale storage
               this.userRoll = 'admin'
-              this.userName = myJson['name']
-              //console.log(this.userName)
-              sessionStorage.setItem("userName",this.userName)
-              sessionStorage.setItem("userPassword",this.userPassword)
-              sessionStorage.setItem("userRoll",this.userRoll)
-              //admin woord naar de crud pagina gestuurd
-              this.$router.push("/crud")
           }
+          this.userName = myJson['name']
+          sessionStorage.setItem("userName",this.userName)
+          sessionStorage.setItem("userRoll",this.userRoll)
+          //admin woord naar de crud pagina gestuurd
+          this.$router.push("/crud")
         }).catch((error) => {
           console.log(error)
           alert('login mislukt')
